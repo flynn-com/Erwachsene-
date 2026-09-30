@@ -24,7 +24,7 @@ export function CourseCard({ course, category, brand }: CourseCardProps) {
   return (
     <Link
       href={`/kurse/${course.slug}`}
-      className="group flex flex-col rounded-[28px] border border-black/5 bg-white p-3 shadow-sm transition-shadow hover:shadow-lg"
+      className="group relative flex flex-col rounded-[28px] border border-black/5 bg-white p-3 shadow-sm transition-shadow hover:shadow-lg"
     >
       <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[20px] bg-[var(--crafty-bg)]">
         {course.imageSrc ? (
@@ -40,7 +40,7 @@ export function CourseCard({ course, category, brand }: CourseCardProps) {
         )}
       </div>
 
-      <div className="flex flex-col items-center gap-3 px-3 pb-3 pt-5 text-center">
+      <div className="flex flex-col items-center gap-3 px-3 pb-8 pt-5 text-center">
         {brand?.logoSrc ? (
           <Image
             src={brand.logoSrc}
@@ -59,9 +59,11 @@ export function CourseCard({ course, category, brand }: CourseCardProps) {
         </h3>
 
         <p className="text-lg font-bold text-[var(--crafty-ink)]">{course.price} EURO</p>
-
-        <p className="self-end text-xs font-medium text-[var(--crafty-muted)]">{course.durationMinutes} MIN.</p>
       </div>
+
+      <p className="absolute bottom-3 right-4 text-xs font-medium text-[var(--crafty-muted)]">
+        {course.durationMinutes} MIN.
+      </p>
     </Link>
   );
 }

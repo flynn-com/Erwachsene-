@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   courses,
   categories,
@@ -82,18 +83,35 @@ export default function HomePage() {
         </div>
       </section>
 
+
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <SectionHeading eyebrow="Markenkooperationen" title="Unsere Partner" align="center" />
-        <div className="mt-8 flex flex-wrap justify-center gap-3">
-          {brandPartners.map((brand) => (
-            <span
-              key={brand.id}
-              className="rounded-full border border-black/5 bg-white px-4 py-2 text-sm font-semibold shadow-sm"
-              style={{ color: brand.accentColor }}
-            >
-              {brand.name}
-            </span>
-          ))}
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+          {brandPartners.map((brand) =>
+            brand.logoSrc ? (
+              <div
+                key={brand.id}
+                className="flex h-20 w-40 items-center justify-center rounded-[24px] border border-black/5 bg-white p-5 shadow-sm"
+              >
+                <Image
+                  src={brand.logoSrc}
+                  alt={brand.name}
+                  width={140}
+                  height={40}
+                  className="h-full w-full object-contain"
+                />
+              </div>
+            ) : (
+              <div
+                key={brand.id}
+                className="flex h-20 w-40 items-center justify-center rounded-[24px] border border-black/5 bg-white p-5 shadow-sm"
+              >
+                <span className="text-sm font-semibold" style={{ color: brand.accentColor }}>
+                  {brand.name}
+                </span>
+              </div>
+            )
+          )}
         </div>
       </section>
 

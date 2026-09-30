@@ -1,7 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { Course, TimeSlot } from "@/lib/mock-data/types";
+import { useCustomerAuth } from "@/lib/auth/customer-auth";
 import { StepSlotSelect } from "@/components/booking/steps/StepSlotSelect";
 import { StepDetails } from "@/components/booking/steps/StepDetails";
 import { StepSummary } from "@/components/booking/steps/StepSummary";
@@ -21,10 +23,27 @@ export type ParticipantDetails = {
 const steps = ["Termin", "Angaben", "Übersicht", "Bestätigung"];
 
 export function BookingStepper({ course, slots }: BookingStepperProps) {
+  const router = useRouter();
+  const pathname = usePathname();
+  const { user, isLoaded } = useCustomerAuth();
+
   const [currentStep, setCurrentStep] = useState(0);
   const [selectedSlot, setSelectedSlot] = useState<TimeSlot | null>(null);
   const [details, setDetails] = useState<ParticipantDetails>({ name: "", email: "", participants: 1 });
   const [bookingRef, setBookingRef] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (isLoaded && !user) {
+      router.replace(`/login?redirect=${encodeURIComponent(pathname)}`);
+    }
+  }, [isLoaded, user, pathname, router]);
+
+  useEffect(() => {
+    if (user) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setDetails((d) => (d.name || d.email ? d : { ...d, name: user.name, email: user.email }));
+    }
+  }, [user]);
 
   function goNext() {
     setCurrentStep((s) => Math.min(s + 1, steps.length - 1));
@@ -38,6 +57,14 @@ export function BookingStepper({ course, slots }: BookingStepperProps) {
     const ref = `CRAFTY-${Math.random().toString(36).slice(2, 8).toUpperCase()}`;
     setBookingRef(ref);
     goNext();
+  }
+
+  if (!isLoaded || !user) {
+    return (
+      <div className="rounded-2xl border border-[var(--crafty-border)] bg-[var(--crafty-surface)] p-6 text-center text-sm text-[var(--crafty-muted)]">
+        Prüfe Anmeldung …
+      </div>
+    );
   }
 
   return (

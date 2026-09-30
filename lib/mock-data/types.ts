@@ -8,7 +8,8 @@ export type CategoryId =
   | "lasertag"
   | "yoga"
   | "pilates"
-  | "kochen";
+  | "kochen"
+  | "beauty";
 
 export interface Category {
   id: CategoryId;

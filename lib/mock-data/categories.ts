@@ -11,4 +11,5 @@ export const categories: Category[] = [
   { id: "yoga", name: "Yoga", description: "Bewegung, Atmung und Achtsamkeit" },
   { id: "pilates", name: "Pilates", description: "Kräftigung und Körperhaltung" },
   { id: "kochen", name: "Kochen", description: "Kochkurse von Grundlagen bis Sterneküche" },
+  { id: "beauty", name: "Kosmetik & Pflege", description: "Eigene Pflegeprodukte und Kosmetik herstellen" },
 ];

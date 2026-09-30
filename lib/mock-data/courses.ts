@@ -179,4 +179,32 @@ export const courses: Course[] = [
     level: "Alle Level",
     maxParticipants: 12,
   },
+  {
+    slug: "naturkosmetik-workshop-dm",
+    title: "Pflege-Workshop: Deine dm-Kosmetik, selbst gemacht",
+    category: "beauty",
+    shortDescription: "Eigene Cremes, Lippenbalsam und Badezusätze mit dm-Rohstoffen herstellen.",
+    description:
+      "In Kooperation mit dm mischst du deine eigene Naturkosmetik – von der Gesichtscreme bis zum Lippenbalsam. Alle Rohstoffe und Rezepturen werden gestellt, du nimmst deine Kreationen mit nach Hause.",
+    durationMinutes: 90,
+    price: 39,
+    room: "Atelier 2",
+    brandPartnerId: "dm",
+    level: "Einsteiger",
+    maxParticipants: 12,
+  },
+  {
+    slug: "rhode-glow-ritual",
+    title: "Rhode Glow: Dein eigenes Skincare-Ritual",
+    category: "beauty",
+    shortDescription: "Minimalistische Pflegeroutine und eigene Lip-Case-Gestaltung mit rhode.",
+    description:
+      "Gemeinsam mit rhode entwickelst du eine reduzierte Skincare-Routine für deinen Hauttyp und gestaltest dein eigenes Lip-Case-Design – inspiriert von der minimalistischen rhode-Ästhetik.",
+    durationMinutes: 90,
+    price: 59,
+    room: "Atelier 2",
+    brandPartnerId: "rhode",
+    level: "Alle Level",
+    maxParticipants: 10,
+  },
 ];

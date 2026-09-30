@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/Bilder
 /crafty-tmp
 /.pnp
 .pnp.*

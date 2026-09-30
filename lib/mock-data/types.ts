@@ -21,6 +21,7 @@ export interface BrandPartner {
   name: string;
   blurb: string;
   accentColor: string;
+  logoSrc?: string;
 }
 
 export type CourseLevel = "Einsteiger" | "Fortgeschritten" | "Alle Level";
@@ -35,6 +36,7 @@ export interface Course {
   price: number;
   room: string;
   brandPartnerId?: string;
+  imageSrc?: string;
   level: CourseLevel;
   maxParticipants: number;
 }

@@ -12,12 +12,14 @@ export const brandPartners: BrandPartner[] = [
     name: "RIMOWA",
     blurb: "Dein eigener RIMOWA-Koffer wird zur individuellen Leinwand.",
     accentColor: "#C8102E",
+    logoSrc: "/brands/rimowa.svg",
   },
   {
     id: "lululemon",
     name: "lululemon",
     blurb: "Bewegung, Textilkunst und Design treffen auf Performance-Materialien.",
     accentColor: "#7B1E3A",
+    logoSrc: "/brands/lululemon.jpg",
   },
   {
     id: "hilti",

@@ -8,6 +8,8 @@ const customerLinks = [
   { href: "/", label: "Start" },
   { href: "/kurse", label: "Kurse" },
   { href: "/standort", label: "Standort" },
+  { href: "/#so-laeufts", label: "So läuft's" },
+  { href: "/#faq", label: "Fragen" },
 ];
 
 export function SiteHeader() {

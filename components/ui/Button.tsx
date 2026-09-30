@@ -5,7 +5,7 @@ type ButtonProps = {
   children: ReactNode;
   href?: string;
   onClick?: () => void;
-  variant?: "primary" | "secondary" | "ghost";
+  variant?: "primary" | "secondary" | "ghost" | "ghost-invert";
   type?: "button" | "submit";
   disabled?: boolean;
   className?: string;
@@ -15,6 +15,7 @@ const variantClasses: Record<string, string> = {
   primary: "bg-[var(--crafty-ink)] text-white hover:bg-black",
   secondary: "bg-[var(--crafty-accent)] text-[var(--crafty-ink)] hover:brightness-95",
   ghost: "bg-transparent text-[var(--crafty-ink)] border border-[var(--crafty-ink)] hover:bg-[var(--crafty-ink)] hover:text-white",
+  "ghost-invert": "bg-transparent text-white border border-white/70 hover:bg-white hover:text-[var(--crafty-accent-dark)]",
 };
 
 export function Button({

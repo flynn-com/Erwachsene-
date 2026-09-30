@@ -7,3 +7,5 @@ export { locations } from "./locations";
 export { kpisByLocation } from "./kpis";
 export { equipment } from "./equipment";
 export { trendSignals } from "./trend-signals";
+export { instructors } from "./instructors";
+export { faqItems } from "./faq";

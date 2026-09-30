@@ -1,13 +1,16 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { Suspense, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { courses, categories, brandPartners } from "@/lib/mock-data";
 import { CourseCard } from "@/components/course/CourseCard";
 import { CourseFilterBar } from "@/components/course/CourseFilterBar";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
-export default function KursePage() {
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+function KursePageContent() {
+  const searchParams = useSearchParams();
+  const initialCategory = searchParams.get("kategorie");
+  const [activeCategory, setActiveCategory] = useState<string | null>(initialCategory);
   const [onlyBrandCooperations, setOnlyBrandCooperations] = useState(false);
 
   const filteredCourses = useMemo(() => {
@@ -47,5 +50,13 @@ export default function KursePage() {
         </div>
       )}
     </div>
+  );
+}
+
+export default function KursePage() {
+  return (
+    <Suspense>
+      <KursePageContent />
+    </Suspense>
   );
 }

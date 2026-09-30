@@ -84,3 +84,16 @@ export interface TrendSignal {
   suggestedBrandPartner?: string;
   rationale: string;
 }
+
+export interface Instructor {
+  id: string;
+  name: string;
+  specialty: string;
+  bio: string;
+  yearsExperience: number;
+}
+
+export interface FaqItem {
+  question: string;
+  answer: string;
+}

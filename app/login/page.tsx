@@ -22,7 +22,7 @@ function LoginPageContent() {
       <LoginForm
         title="Anmelden bei CRAFTY"
         description="Melde dich an, um Kurse zu buchen und deine Buchungen zu verwalten."
-        googleDemoName="Alex Musterkunde"
+        defaultUser={{ name: "Lisa", email: "lisa@crafty-demo.de" }}
         onSuccess={handleSuccess}
       />
     </div>

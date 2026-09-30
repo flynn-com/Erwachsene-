@@ -7,25 +7,25 @@ import { Button } from "@/components/ui/Button";
 type LoginFormProps = {
   title: string;
   description: string;
-  googleDemoName: string;
+  defaultUser: { name: string; email: string };
   onSuccess: (user: MockUser) => void;
 };
 
-export function LoginForm({ title, description, googleDemoName, onSuccess }: LoginFormProps) {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const isValid = name.trim().length > 1 && email.includes("@") && password.length >= 4;
+export function LoginForm({ title, description, defaultUser, onSuccess }: LoginFormProps) {
+  const [name, setName] = useState(defaultUser.name);
+  const [email, setEmail] = useState(defaultUser.email);
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!isValid) return;
-    onSuccess({ name: name.trim(), email: email.trim(), provider: "email" });
+    onSuccess({
+      name: name.trim() || defaultUser.name,
+      email: email.trim() || defaultUser.email,
+      provider: "email",
+    });
   }
 
   function handleGoogleLogin() {
-    onSuccess({ name: googleDemoName, email: "demo@gmail.com", provider: "google" });
+    onSuccess({ name: defaultUser.name, email: defaultUser.email, provider: "google" });
   }
 
   return (
@@ -56,7 +56,7 @@ export function LoginForm({ title, description, googleDemoName, onSuccess }: Log
             value={name}
             onChange={(e) => setName(e.target.value)}
             className="rounded-lg border border-[var(--crafty-border)] bg-[var(--crafty-surface)] px-3 py-2 text-sm"
-            placeholder="Vor- und Nachname"
+            placeholder={defaultUser.name}
           />
         </label>
         <label className="flex flex-col gap-1 text-sm font-medium text-[var(--crafty-ink)]">
@@ -66,27 +66,18 @@ export function LoginForm({ title, description, googleDemoName, onSuccess }: Log
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="rounded-lg border border-[var(--crafty-border)] bg-[var(--crafty-surface)] px-3 py-2 text-sm"
-            placeholder="du@beispiel.de"
-          />
-        </label>
-        <label className="flex flex-col gap-1 text-sm font-medium text-[var(--crafty-ink)]">
-          Passwort
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="rounded-lg border border-[var(--crafty-border)] bg-[var(--crafty-surface)] px-3 py-2 text-sm"
-            placeholder="••••••••"
+            placeholder={defaultUser.email}
           />
         </label>
 
-        <Button type="submit" disabled={!isValid} className="mt-2 w-full">
+        <Button type="submit" className="mt-2 w-full">
           Anmelden
         </Button>
       </form>
 
       <p className="mt-5 text-center text-xs text-[var(--crafty-muted)]">
-        Dies ist ein Prototyp — das Login ist simuliert, es findet keine echte Authentifizierung statt.
+        Dies ist ein Prototyp — das Login ist simuliert. Einfach auf „Anmelden&quot; klicken, die Felder
+        sind bereits vorausgefüllt.
       </p>
     </div>
   );

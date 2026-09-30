@@ -19,7 +19,7 @@ export default function PartnerLoginPage() {
       <LoginForm
         title="Partner-Login"
         description="Melde dich als Franchisenehmer an, um dein Dashboard, den Marktplatz und den Trend-Radar zu sehen."
-        googleDemoName="Sam Standortleitung"
+        defaultUser={{ name: "Lisa", email: "lisa@crafty-partner-demo.de" }}
         onSuccess={handleSuccess}
       />
     </div>

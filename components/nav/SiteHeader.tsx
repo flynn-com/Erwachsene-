@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useCustomerAuth } from "@/lib/auth/customer-auth";
 
@@ -21,18 +22,18 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-[var(--crafty-border)] bg-[var(--crafty-bg)]/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
-        <Link href="/" className="text-xl font-extrabold tracking-tight text-[var(--crafty-ink)]">
-          Atelierhaus
+        <Link href="/" className="shrink-0">
+          <Image src="/atelierhaus-logo.png" alt="Atelierhaus" width={674} height={73} className="h-5 w-auto" priority />
         </Link>
 
         {!isPartner && (
-          <nav className="hidden items-center gap-6 sm:flex">
+          <nav className="hidden items-center gap-7 sm:flex">
             {customerLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-[var(--crafty-accent-dark)] ${
-                  pathname === link.href ? "text-[var(--crafty-accent-dark)]" : "text-[var(--crafty-ink)]"
+                className={`text-xs font-bold uppercase tracking-wide transition-colors hover:text-[var(--crafty-accent-dark)] ${
+                  pathname === link.href ? "text-[var(--crafty-accent-dark)]" : "text-[var(--crafty-accent-dark)]/80"
                 }`}
               >
                 {link.label}

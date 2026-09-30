@@ -23,11 +23,12 @@ export default function HomePage() {
   const upcoming = [...timeSlots]
     .filter((slot) => slot.freeSpots > 0)
     .sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime())
-    .slice(0, 3)
+    .slice(0, 4)
     .map((slot) => {
       const course = courses.find((c) => c.slug === slot.courseSlug)!;
       const categoryName = categories.find((c) => c.id === course.category)?.name ?? course.category;
-      return { slot, course, categoryName };
+      const brandName = brandPartners.find((b) => b.id === course.brandPartnerId)?.name;
+      return { slot, course, categoryId: course.category, categoryName, brandName };
     });
 
   const courseCounts = courses.reduce<Record<string, number>>((acc, course) => {
@@ -37,22 +38,21 @@ export default function HomePage() {
 
   return (
     <div>
-      <section className="mx-auto grid max-w-6xl gap-10 px-4 pb-20 pt-16 sm:px-6 sm:pt-24 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-        <div>
-          <p className="mb-4 inline-block rounded-full bg-[var(--crafty-accent)] px-4 py-1.5 text-sm font-semibold text-[var(--crafty-accent-dark)]">
-            Kreativkurse für Erwachsene · München
+      <section className="px-4 pb-4 pt-12 sm:px-6 sm:pt-16">
+
+        <div className="mx-auto max-w-3xl text-center">
+          <Image
+            src="/atelierhaus-logo.png"
+            alt="Atelierhaus"
+            width={674}
+            height={73}
+            priority
+            className="mx-auto h-auto w-full max-w-xl"
+          />
+          <p className="mt-4 text-lg uppercase tracking-[0.15em] text-[var(--crafty-muted)]">
+            Ein Haus voller Ideen
           </p>
-          <h1 className="text-5xl font-extrabold leading-[1.05] tracking-tight text-[var(--crafty-ink)] sm:text-6xl">
-            Ein Haus voller Werkstätten.
-            <br />
-            <span className="text-[var(--crafty-accent-dark)]">Jede Woche etwas Neues.</span>
-          </h1>
-          <p className="mt-6 max-w-xl text-lg text-[var(--crafty-muted)]">
-            Zeichnen, Malen, Töpfern, Sticken, Steinhauen, Rage Room, Lasertag, Yoga, Pilates und
-            Kochkurse unter einem Dach — viele davon in Kooperation mit Marken wie Faber-Castell,
-            RIMOWA, lululemon und Hilti.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-4">
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Button href="/kurse">Kurse entdecken</Button>
             <Button href="/standort" variant="ghost">
               Standort München ansehen
@@ -60,7 +60,9 @@ export default function HomePage() {
           </div>
         </div>
 
-        <NextUpCard items={upcoming} />
+        <div className="mx-auto mt-14 max-w-4xl">
+          <NextUpCard items={upcoming} />
+        </div>
       </section>
 
       <section className="border-y border-[var(--crafty-border)] bg-white py-16">

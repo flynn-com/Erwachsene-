@@ -1,38 +1,78 @@
 import Link from "next/link";
-import { Course, TimeSlot } from "@/lib/mock-data/types";
-import { formatDateTime } from "@/lib/format";
+import { Course, TimeSlot, CategoryId } from "@/lib/mock-data/types";
+import { formatDateShort } from "@/lib/format";
 
 type UpcomingItem = {
   slot: TimeSlot;
   course: Course;
+  categoryId: CategoryId;
   categoryName: string;
+  brandName?: string;
 };
+
+const categoryTagColors: Record<CategoryId, string> = {
+  zeichnen: "var(--pastel-terracotta-dark)",
+  malen: "var(--pastel-terracotta-dark)",
+  toepfern: "var(--pastel-butter-dark)",
+  sticken: "var(--pastel-blush-dark)",
+  steinhauen: "var(--crafty-muted)",
+  "rage-room": "var(--pastel-blush-dark)",
+  lasertag: "var(--pastel-sky-dark)",
+  yoga: "var(--pastel-sage-dark)",
+  pilates: "var(--pastel-sage-dark)",
+  kochen: "var(--pastel-terracotta-dark)",
+  beauty: "var(--pastel-lavender-dark)",
+};
+
+function splitTitle(title: string): { prefix: string; rest: string | null } {
+  const colonIndex = title.indexOf(":");
+  if (colonIndex === -1) return { prefix: title, rest: null };
+  return {
+    prefix: title.slice(0, colonIndex + 1),
+    rest: title.slice(colonIndex + 1).trim(),
+  };
+}
 
 export function NextUpCard({ items }: { items: UpcomingItem[] }) {
   return (
-    <div className="w-full rounded-[28px] bg-[var(--crafty-accent-dark)] p-6 text-white sm:p-7">
-      <p className="text-xs font-semibold uppercase tracking-wide text-white/70">Als Nächstes im Haus</p>
-      <ul className="mt-4 flex flex-col gap-3">
-        {items.map(({ slot, course, categoryName }) => (
-          <li key={slot.id}>
+    <div className="w-full rounded-[28px] bg-[var(--crafty-accent-dark)] p-6 sm:p-8">
+      <h2 className="text-center text-xl font-bold uppercase tracking-wide text-white">Events in München</h2>
+      <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        {items.map(({ slot, course, categoryId, categoryName, brandName }) => {
+          const { prefix, rest } = splitTitle(course.title);
+          return (
             <Link
+              key={slot.id}
               href={`/kurse/${course.slug}`}
-              className="flex items-center justify-between gap-4 rounded-2xl bg-white/10 p-4 transition-colors hover:bg-white/15"
+              className="flex flex-col justify-between gap-4 rounded-[20px] bg-[var(--crafty-bg)] p-5 transition-transform hover:-translate-y-0.5"
             >
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wide text-[var(--pastel-butter)]">
+              <div className="flex items-start justify-between gap-2">
+                <span
+                  className="text-xs font-bold uppercase tracking-wide"
+                  style={{ color: categoryTagColors[categoryId] }}
+                >
                   {categoryName}
-                </p>
-                <p className="mt-1 font-semibold leading-snug">{course.title}</p>
-                <p className="mt-1 text-sm capitalize text-white/70">{formatDateTime(slot.start)}</p>
+                </span>
+                {brandName && (
+                  <span className="text-xs font-bold uppercase tracking-wide text-[var(--crafty-muted)]">
+                    {brandName}
+                  </span>
+                )}
               </div>
-              <div className="shrink-0 text-right text-sm text-white/80">
-                <p>{slot.freeSpots} frei</p>
+
+              <p className="text-base leading-snug text-[var(--crafty-ink)]">
+                <span className="font-bold underline decoration-2 underline-offset-2">{prefix}</span>
+                {rest && <span className="font-medium"> {rest}</span>}
+              </p>
+
+              <div className="flex items-center justify-between text-sm">
+                <span className="font-semibold text-[var(--crafty-muted)]">{formatDateShort(slot.start)}</span>
+                <span className="font-bold text-[var(--crafty-accent-dark)]">{slot.freeSpots} frei</span>
               </div>
             </Link>
-          </li>
-        ))}
-      </ul>
+          );
+        })}
+      </div>
     </div>
   );
 }

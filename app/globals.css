@@ -43,5 +43,5 @@
 body {
   background: var(--crafty-bg);
   color: var(--crafty-ink);
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
 }

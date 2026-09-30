@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/nav/SiteHeader";
 import { CustomerAuthProvider } from "@/lib/auth/customer-auth";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
   title: "Atelierhaus – Kreativkurse unter einem Dach",
@@ -11,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="de" className="h-full antialiased">
+    <html lang="de" className={`h-full antialiased ${inter.variable}`}>
       <body className="flex min-h-full flex-col">
         <CustomerAuthProvider>
           <SiteHeader />

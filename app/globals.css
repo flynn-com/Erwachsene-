@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+
+  /* Brand */
+  --crafty-bg: #fbf7f0;
+  --crafty-surface: #ffffff;
+  --crafty-ink: #1a1a1a;
+  --crafty-muted: #6b6558;
+  --crafty-accent: #e9c46a;
+  --crafty-accent-dark: #9c6b1f;
+  --crafty-border: rgba(26, 26, 26, 0.1);
+
+  /* Chart / dataviz (validated default palette, light surface) */
+  --chart-surface: #fcfcfb;
+  --chart-text-primary: #0b0b0b;
+  --chart-text-secondary: #52514e;
+  --chart-muted: #898781;
+  --chart-grid: #e1e0d9;
+  --chart-baseline: #c3c2b7;
+  --series-1: #2a78d6;
+  --series-2: #eb6834;
+  --series-3: #1baf7a;
+  --status-good: #0ca30c;
+  --status-warning: #fab219;
+}
+
+body {
+  background: var(--crafty-bg);
+  color: var(--crafty-ink);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}

@@ -1,0 +1,55 @@
+import { TrendSignal } from "./types";
+
+export const trendSignals: TrendSignal[] = [
+  {
+    id: "trend-rageroom-muc",
+    scope: "lokal",
+    title: "Steigendes Interesse an Rage-Room-Formaten in München",
+    momentum: 87,
+    suggestedCategory: "rage-room",
+    rationale: "Suchanfragen und Social-Media-Erwähnungen zu 'Rage Room München' sind in den letzten 8 Wochen um 64% gestiegen.",
+  },
+  {
+    id: "trend-lululemon-global",
+    scope: "global",
+    title: "Lululemon investiert verstärkt in Community-Events statt reiner Retail-Präsenz",
+    momentum: 74,
+    suggestedBrandPartner: "lululemon",
+    suggestedCategory: "yoga",
+    rationale: "Internationale Markenberichte zeigen eine Verschiebung von lululemon-Budgets hin zu Community- und Studio-Kooperationen.",
+  },
+  {
+    id: "trend-steinhauen-handwerk",
+    scope: "global",
+    title: "'Slow Craft' – handwerkliche Achtsamkeitskurse im Aufwind",
+    momentum: 68,
+    suggestedCategory: "steinhauen",
+    suggestedBrandPartner: "hilti",
+    rationale: "Globale Trendreports zeigen wachsendes Interesse an langsamen, haptischen Handwerkskursen als Ausgleich zum Bildschirmalltag.",
+  },
+  {
+    id: "trend-kochen-sternekueche-hh",
+    scope: "lokal",
+    title: "Hamburger Foodie-Szene fragt verstärkt Sterneküche-Erlebnisse nach",
+    momentum: 61,
+    suggestedCategory: "kochen",
+    rationale: "Lokale Eventportale in Hamburg verzeichnen einen Anstieg an Suchanfragen nach 'Kochkurs Sterneküche' um 40%.",
+  },
+  {
+    id: "trend-rimowa-reise",
+    scope: "global",
+    title: "Reise-Comeback treibt Interesse an Premium-Reisegepäck-Marken",
+    momentum: 71,
+    suggestedBrandPartner: "rimowa",
+    suggestedCategory: "malen",
+    rationale: "Globale Reisedaten zeigen ein starkes Comeback des Reisevolumens – Premium-Gepäckmarken gewinnen an Sichtbarkeit.",
+  },
+  {
+    id: "trend-toepfern-koeln",
+    scope: "lokal",
+    title: "Töpfer-Workshops in Köln stark nachgefragt, Angebot noch gering",
+    momentum: 58,
+    suggestedCategory: "toepfern",
+    rationale: "Analyse lokaler Veranstaltungsplattformen zeigt hohe Nachfrage bei gleichzeitig wenigen verfügbaren Töpferkursen in Köln.",
+  },
+];

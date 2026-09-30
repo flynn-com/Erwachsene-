@@ -1,0 +1,58 @@
+import { categories } from "@/lib/mock-data";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
+
+const rooms = [
+  { name: "Atelier 1 & 2", use: "Zeichnen, Malen, Markenkooperationen" },
+  { name: "Werkraum Keramik", use: "Töpfern an der Scheibe und im Handaufbau" },
+  { name: "Atelier 3", use: "Sticken und Textilarbeit" },
+  { name: "Werkhalle", use: "Steinhauen mit Profi-Werkzeug" },
+  { name: "Rage Room", use: "Schallgedämmt, mit Schutzausrüstung" },
+  { name: "Lasertag-Arena", use: "Parcours für bis zu 20 Spieler:innen" },
+  { name: "Bewegungsraum", use: "Yoga und Pilates" },
+  { name: "Showküche", use: "Kochkurse mit Sterneköchen" },
+];
+
+export default function StandortPage() {
+  return (
+    <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6">
+      <SectionHeading
+        eyebrow="Standort"
+        title="CRAFTY München"
+        description="Eine Halle, acht Räume, zehn Kursarten. Mitten in München gelegen — der erste CRAFTY-Standort und die Blaupause für unser Franchise-Konzept."
+      />
+
+      <PlaceholderImage seed="standort-muenchen" label="CRAFTY Halle München" className="mt-8 h-64 w-full rounded-2xl" />
+
+      <div className="mt-10 grid gap-4 sm:grid-cols-2">
+        {rooms.map((room) => (
+          <div key={room.name} className="rounded-xl border border-[var(--crafty-border)] bg-[var(--crafty-surface)] p-5">
+            <h3 className="font-bold text-[var(--crafty-ink)]">{room.name}</h3>
+            <p className="mt-1 text-sm text-[var(--crafty-muted)]">{room.use}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-10 rounded-2xl border border-[var(--crafty-border)] bg-[var(--crafty-surface)] p-6">
+        <h3 className="font-bold text-[var(--crafty-ink)]">Adresse (Platzhalter)</h3>
+        <p className="mt-2 text-sm text-[var(--crafty-muted)]">
+          Kreativstraße 12, 80331 München — geöffnet täglich von 9:00 bis 22:00 Uhr.
+        </p>
+      </div>
+
+      <div className="mt-10">
+        <h3 className="mb-4 font-bold text-[var(--crafty-ink)]">Kursarten am Standort</h3>
+        <div className="flex flex-wrap gap-2">
+          {categories.map((category) => (
+            <span
+              key={category.id}
+              className="rounded-full border border-[var(--crafty-border)] bg-[var(--crafty-surface)] px-4 py-2 text-sm font-medium text-[var(--crafty-ink)]"
+            >
+              {category.name}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}

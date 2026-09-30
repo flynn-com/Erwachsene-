@@ -6,7 +6,7 @@ export function EquipmentCard({ item }: { item: EquipmentItem }) {
   const isAvailable = item.available > 0;
 
   return (
-    <div className="flex flex-col gap-3 rounded-2xl border border-[var(--crafty-border)] bg-[var(--crafty-surface)] p-5">
+    <div className="flex flex-col gap-3 rounded-[28px] border border-black/5 bg-white shadow-sm p-5">
       <div className="flex items-start justify-between gap-3">
         <h3 className="font-bold text-[var(--crafty-ink)]">{item.name}</h3>
         <span

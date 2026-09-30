@@ -18,22 +18,22 @@ export default function StandortPage() {
     <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6">
       <SectionHeading
         eyebrow="Standort"
-        title="CRAFTY München"
-        description="Eine Halle, acht Räume, zehn Kursarten. Mitten in München gelegen — der erste CRAFTY-Standort und die Blaupause für unser Franchise-Konzept."
+        title="Atelierhaus München"
+        description="Eine Halle, acht Räume, zehn Kursarten. Mitten in München gelegen — der erste Atelierhaus-Standort und die Blaupause für unser Franchise-Konzept."
       />
 
-      <PlaceholderImage seed="standort-muenchen" label="CRAFTY Halle München" className="mt-8 h-64 w-full rounded-2xl" />
+      <PlaceholderImage seed="standort-muenchen" label="Atelierhaus Halle München" className="mt-8 h-64 w-full rounded-[28px]" />
 
       <div className="mt-10 grid gap-4 sm:grid-cols-2">
         {rooms.map((room) => (
-          <div key={room.name} className="rounded-xl border border-[var(--crafty-border)] bg-[var(--crafty-surface)] p-5">
+          <div key={room.name} className="rounded-[22px] border border-black/5 bg-white shadow-sm p-5">
             <h3 className="font-bold text-[var(--crafty-ink)]">{room.name}</h3>
             <p className="mt-1 text-sm text-[var(--crafty-muted)]">{room.use}</p>
           </div>
         ))}
       </div>
 
-      <div className="mt-10 rounded-2xl border border-[var(--crafty-border)] bg-[var(--crafty-surface)] p-6">
+      <div className="mt-10 rounded-[28px] border border-black/5 bg-white shadow-sm p-6">
         <h3 className="font-bold text-[var(--crafty-ink)]">Adresse (Platzhalter)</h3>
         <p className="mt-2 text-sm text-[var(--crafty-muted)]">
           Kreativstraße 12, 80331 München — geöffnet täglich von 9:00 bis 22:00 Uhr.
@@ -46,7 +46,7 @@ export default function StandortPage() {
           {categories.map((category) => (
             <span
               key={category.id}
-              className="rounded-full border border-[var(--crafty-border)] bg-[var(--crafty-surface)] px-4 py-2 text-sm font-medium text-[var(--crafty-ink)]"
+              className="rounded-full border border-black/5 bg-white px-4 py-2 text-sm font-medium text-[var(--crafty-ink)] shadow-sm"
             >
               {category.name}
             </span>

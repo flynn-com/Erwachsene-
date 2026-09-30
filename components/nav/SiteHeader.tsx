@@ -20,7 +20,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-[var(--crafty-border)] bg-[var(--crafty-bg)]/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
         <Link href="/" className="text-xl font-extrabold tracking-tight text-[var(--crafty-ink)]">
-          CRAFTY
+          Atelierhaus
         </Link>
 
         {!isPartner && (

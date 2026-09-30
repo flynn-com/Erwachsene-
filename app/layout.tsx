@@ -4,9 +4,9 @@ import { SiteHeader } from "@/components/nav/SiteHeader";
 import { CustomerAuthProvider } from "@/lib/auth/customer-auth";
 
 export const metadata: Metadata = {
-  title: "CRAFTY – Kreativkurse unter einem Dach",
+  title: "Atelierhaus – Kreativkurse unter einem Dach",
   description:
-    "CRAFTY ist die Location in München, die Zeichnen, Malen, Töpfern, Sticken, Steinhauen, Rage Room, Yoga, Pilates und Kochkurse unter einem Dach bündelt – mit echten Markenkooperationen.",
+    "Atelierhaus ist die Location in München, die Zeichnen, Malen, Töpfern, Sticken, Steinhauen, Rage Room, Yoga, Pilates und Kochkurse unter einem Dach bündelt – mit echten Markenkooperationen.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -17,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <SiteHeader />
           <main className="flex-1">{children}</main>
           <footer className="border-t border-[var(--crafty-border)] py-8 text-center text-xs text-[var(--crafty-muted)]">
-            CRAFTY Prototyp · München · dies ist eine Demo-Webseite ohne echte Buchungen
+            Atelierhaus Prototyp · München · dies ist eine Demo-Webseite ohne echte Buchungen
           </footer>
         </CustomerAuthProvider>
       </body>

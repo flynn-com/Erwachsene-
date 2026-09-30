@@ -20,9 +20,9 @@ function LoginPageContent() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6">
       <LoginForm
-        title="Anmelden bei CRAFTY"
+        title="Anmelden bei Atelierhaus"
         description="Melde dich an, um Kurse zu buchen und deine Buchungen zu verwalten."
-        defaultUser={{ name: "Lisa", email: "lisa@crafty-demo.de" }}
+        defaultUser={{ name: "Lisa", email: "lisa@atelierhaus-demo.de" }}
         onSuccess={handleSuccess}
       />
     </div>

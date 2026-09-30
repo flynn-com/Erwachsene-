@@ -49,7 +49,7 @@ export function KpiChart({ title, data, metric, formatValue }: KpiChartProps) {
   }
 
   return (
-    <div className="rounded-2xl border border-[var(--crafty-border)] bg-[var(--chart-surface)] p-5">
+    <div className="rounded-[28px] border border-black/5 bg-[var(--chart-surface)] shadow-sm p-5">
       <div className="mb-3 flex items-center justify-between">
         <h3 id={titleId} className="text-sm font-semibold text-[var(--chart-text-primary)]">
           {title}

@@ -19,7 +19,7 @@ export default function PartnerLoginPage() {
       <LoginForm
         title="Partner-Login"
         description="Melde dich als Franchisenehmer an, um dein Dashboard, den Marktplatz und den Trend-Radar zu sehen."
-        defaultUser={{ name: "Lisa", email: "lisa@crafty-partner-demo.de" }}
+        defaultUser={{ name: "Lisa", email: "lisa@atelierhaus-partner-demo.de" }}
         onSuccess={handleSuccess}
       />
     </div>

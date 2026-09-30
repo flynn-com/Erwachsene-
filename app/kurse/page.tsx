@@ -20,7 +20,7 @@ export default function KursePage() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-      <SectionHeading eyebrow="Kurskatalog" title="Alle Kurse bei CRAFTY" description="Finde deinen Kurs — filterbar nach Kategorie und Markenkooperation." />
+      <SectionHeading eyebrow="Kurskatalog" title="Alle Kurse bei Atelierhaus" description="Finde deinen Kurs — filterbar nach Kategorie und Markenkooperation." />
 
       <div className="mt-8">
         <CourseFilterBar

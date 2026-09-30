@@ -8,7 +8,7 @@ type KpiStatTileProps = {
 
 export function KpiStatTile({ label, value, delta, deltaPositive, sparklinePoints }: KpiStatTileProps) {
   return (
-    <div className="rounded-2xl border border-[var(--crafty-border)] bg-[var(--chart-surface)] p-5">
+    <div className="rounded-[28px] border border-black/5 bg-[var(--chart-surface)] shadow-sm p-5">
       <p className="text-xs font-semibold uppercase tracking-wide text-[var(--chart-muted)]">{label}</p>
       <div className="mt-2 flex items-end justify-between gap-3">
         <p className="text-3xl font-bold tabular-nums text-[var(--chart-text-primary)]">{value}</p>

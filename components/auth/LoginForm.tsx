@@ -29,7 +29,7 @@ export function LoginForm({ title, description, defaultUser, onSuccess }: LoginF
   }
 
   return (
-    <div className="mx-auto w-full max-w-sm rounded-2xl border border-[var(--crafty-border)] bg-[var(--crafty-surface)] p-8">
+    <div className="mx-auto w-full max-w-sm rounded-[28px] border border-black/5 bg-white shadow-sm p-8">
       <h1 className="text-xl font-bold text-[var(--crafty-ink)]">{title}</h1>
       <p className="mt-1 text-sm text-[var(--crafty-muted)]">{description}</p>
 

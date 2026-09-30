@@ -5,12 +5,12 @@ type PlaceholderImageProps = {
 };
 
 const gradients = [
-  "linear-gradient(135deg,#F4A261,#E76F51)",
-  "linear-gradient(135deg,#2A9D8F,#264653)",
-  "linear-gradient(135deg,#E9C46A,#F4A261)",
-  "linear-gradient(135deg,#8AB6D6,#2A6F97)",
-  "linear-gradient(135deg,#B08968,#7F5539)",
-  "linear-gradient(135deg,#9D8189,#6D6875)",
+  "linear-gradient(135deg,#cfe3cb,#9cbf97)",
+  "linear-gradient(135deg,#f3d9d2,#e3ada0)",
+  "linear-gradient(135deg,#d7e6ee,#a9c8d8)",
+  "linear-gradient(135deg,#f6e8bd,#e3c978)",
+  "linear-gradient(135deg,#e4dcef,#bdaad9)",
+  "linear-gradient(135deg,#e8c3ae,#c98f6e)",
 ];
 
 function hashString(value: string): number {
@@ -25,7 +25,7 @@ export function PlaceholderImage({ seed, label, className = "" }: PlaceholderIma
   const gradient = gradients[hashString(seed) % gradients.length];
   return (
     <div
-      className={`flex items-center justify-center text-center text-sm font-semibold text-white/90 ${className}`}
+      className={`flex items-center justify-center text-center text-sm font-semibold text-[#2b2a28]/70 ${className}`}
       style={{ background: gradient }}
       aria-hidden
     >

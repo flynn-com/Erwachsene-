@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import { courses, categories, brandPartners } from "@/lib/mock-data";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { BrandCooperationBadge } from "@/components/course/BrandCooperationBadge";
@@ -19,7 +20,19 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ s
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6">
-      <PlaceholderImage seed={course.slug} label={category?.name ?? course.category} className="h-56 w-full rounded-2xl" />
+      <div className="relative h-56 w-full overflow-hidden rounded-[28px] bg-[var(--crafty-bg)]">
+        {course.imageSrc ? (
+          <Image
+            src={course.imageSrc}
+            alt={course.title}
+            fill
+            sizes="(min-width: 1024px) 800px, 100vw"
+            className="object-cover"
+          />
+        ) : (
+          <PlaceholderImage seed={course.slug} label={category?.name ?? course.category} className="h-full w-full" />
+        )}
+      </div>
 
       <div className="mt-8">
         {brand && <BrandCooperationBadge brand={brand} />}
@@ -28,7 +41,7 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ s
         </h1>
         <p className="mt-4 text-base text-[var(--crafty-muted)]">{course.description}</p>
 
-        <dl className="mt-8 grid grid-cols-2 gap-4 rounded-2xl border border-[var(--crafty-border)] bg-[var(--crafty-surface)] p-6 sm:grid-cols-4">
+        <dl className="mt-8 grid grid-cols-2 gap-4 rounded-[28px] border border-black/5 bg-white shadow-sm p-6 sm:grid-cols-4">
           <Detail label="Preis" value={formatPrice(course.price)} />
           <Detail label="Dauer" value={`${course.durationMinutes} Min`} />
           <Detail label="Level" value={course.level} />

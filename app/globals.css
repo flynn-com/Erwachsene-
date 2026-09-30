@@ -3,14 +3,28 @@
 :root {
   color-scheme: light;
 
-  /* Brand */
-  --crafty-bg: #fbf7f0;
+  /* Brand — soft, pastel, modern */
+  --crafty-bg: #f7f3ed;
   --crafty-surface: #ffffff;
-  --crafty-ink: #1a1a1a;
-  --crafty-muted: #6b6558;
-  --crafty-accent: #e9c46a;
-  --crafty-accent-dark: #9c6b1f;
-  --crafty-border: rgba(26, 26, 26, 0.1);
+  --crafty-ink: #2b2a28;
+  --crafty-muted: #8a8377;
+  --crafty-accent: #cfe3cb;
+  --crafty-accent-dark: #4f6f52;
+  --crafty-border: rgba(43, 42, 40, 0.08);
+
+  /* Pastel palette for illustrations, badges, gradients */
+  --pastel-sage: #cfe3cb;
+  --pastel-sage-dark: #9cbf97;
+  --pastel-blush: #f3d9d2;
+  --pastel-blush-dark: #e3ada0;
+  --pastel-sky: #d7e6ee;
+  --pastel-sky-dark: #a9c8d8;
+  --pastel-butter: #f6e8bd;
+  --pastel-butter-dark: #e3c978;
+  --pastel-lavender: #e4dcef;
+  --pastel-lavender-dark: #bdaad9;
+  --pastel-terracotta: #e8c3ae;
+  --pastel-terracotta-dark: #c98f6e;
 
   /* Chart / dataviz (validated default palette, light surface) */
   --chart-surface: #fcfcfb;

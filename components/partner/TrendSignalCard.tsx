@@ -8,7 +8,7 @@ export function TrendSignalCard({ signal }: { signal: TrendSignal }) {
   const brandName = brandPartners.find((b) => b.id === signal.suggestedBrandPartner)?.name;
 
   return (
-    <div className="rounded-2xl border border-[var(--crafty-border)] bg-[var(--chart-surface)] p-5">
+    <div className="rounded-[28px] border border-black/5 bg-[var(--chart-surface)] shadow-sm p-5">
       <div className="mb-3 flex items-center justify-between gap-3">
         <span
           className="rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wide"

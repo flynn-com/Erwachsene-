@@ -8,7 +8,7 @@ export default function MarktplatzPage() {
       <SectionHeading
         eyebrow="Marktplatz"
         title="Equipment mieten"
-        description="Statt jedes Gerät selbst anzuschaffen, mieten Franchise-Standorte Kursequipment direkt über CRAFTY."
+        description="Statt jedes Gerät selbst anzuschaffen, mieten Franchise-Standorte Kursequipment direkt über Atelierhaus."
       />
       <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {equipment.map((item) => (

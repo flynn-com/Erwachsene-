@@ -54,21 +54,21 @@ export function BookingStepper({ course, slots }: BookingStepperProps) {
   }
 
   function handleConfirm() {
-    const ref = `CRAFTY-${Math.random().toString(36).slice(2, 8).toUpperCase()}`;
+    const ref = `ATELIER-${Math.random().toString(36).slice(2, 8).toUpperCase()}`;
     setBookingRef(ref);
     goNext();
   }
 
   if (!isLoaded || !user) {
     return (
-      <div className="rounded-2xl border border-[var(--crafty-border)] bg-[var(--crafty-surface)] p-6 text-center text-sm text-[var(--crafty-muted)]">
+      <div className="rounded-[28px] border border-black/5 bg-white shadow-sm p-6 text-center text-sm text-[var(--crafty-muted)]">
         Prüfe Anmeldung …
       </div>
     );
   }
 
   return (
-    <div className="rounded-2xl border border-[var(--crafty-border)] bg-[var(--crafty-surface)] p-6">
+    <div className="rounded-[28px] border border-black/5 bg-white shadow-sm p-6">
       <ol className="mb-8 flex flex-wrap items-center gap-2 text-xs font-semibold text-[var(--crafty-muted)]">
         {steps.map((step, i) => (
           <li key={step} className="flex items-center gap-2">

@@ -68,7 +68,7 @@ export default function HomePage() {
     <div>
       <section className="relative isolate flex min-h-[66vh] items-end overflow-hidden px-4 pb-14 pt-28 sm:px-6 sm:pb-16">
         <Image
-          src="/hero-start.jpg"
+          src="/hero-innen.jpg"
           alt=""
           fill
           priority
@@ -78,6 +78,10 @@ export default function HomePage() {
         <div
           aria-hidden
           className="absolute inset-0 -z-10 bg-gradient-to-t from-black/80 via-black/35 to-black/10"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-10 bg-gradient-to-r from-black/60 via-black/25 to-transparent"
         />
 
         <div className="mx-auto w-full max-w-6xl text-white">

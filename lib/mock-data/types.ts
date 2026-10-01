@@ -10,7 +10,8 @@ export type CategoryId =
   | "pilates"
   | "kochen"
   | "beauty"
-  | "floristik";
+  | "floristik"
+  | "wein";
 
 export interface Category {
   id: CategoryId;

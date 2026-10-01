@@ -13,4 +13,5 @@ export const categories: Category[] = [
   { id: "kochen", name: "Kochen", description: "Kochkurse von Grundlagen bis Sterneküche" },
   { id: "beauty", name: "Kosmetik & Pflege", description: "Eigene Pflegeprodukte und Kosmetik herstellen" },
   { id: "floristik", name: "Floristik", description: "Sträuße binden und Blumen arrangieren" },
+  { id: "wein", name: "Wein & Genuss", description: "Weintastings und Verkostungen" },
 ];

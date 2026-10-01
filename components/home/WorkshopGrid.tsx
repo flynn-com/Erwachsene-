@@ -14,6 +14,7 @@ const categoryIcons: Record<CategoryId, string> = {
   kochen: "🍳",
   beauty: "🧴",
   floristik: "💐",
+  wein: "🍷",
 };
 
 type WorkshopGridProps = {

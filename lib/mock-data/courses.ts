@@ -261,4 +261,18 @@ export const courses: Course[] = [
     level: "Einsteiger",
     maxParticipants: 10,
   },
+  {
+    slug: "weintasting-vom-fass",
+    title: "Weintasting: Direkt vom Fass",
+    category: "wein",
+    shortDescription: "Rotweine direkt aus dem Barrique verkosten und Wein schmecken lernen.",
+    description:
+      "Gemeinsam mit einem Sommelier probierst du junge Rotweine direkt aus dem Holzfass und vergleichst sie mit fertig ausgebauten Jahrgängen. Du lernst, Wein richtig zu verkosten, Aromen zu erkennen und zu beschreiben – dazu gibt es Brot und Käse. Teilnahme ab 18 Jahren.",
+    durationMinutes: 120,
+    price: 55,
+    room: "Showküche",
+    imageSrc: "/course-images/weintasting.jpg",
+    level: "Alle Level",
+    maxParticipants: 14,
+  },
 ];

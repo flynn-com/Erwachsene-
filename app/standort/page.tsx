@@ -10,7 +10,7 @@ const rooms = [
   { name: "Rage Room", use: "Schallgedämmt, mit Schutzausrüstung" },
   { name: "Lasertag-Arena", use: "Parcours für bis zu 20 Spieler:innen" },
   { name: "Bewegungsraum", use: "Yoga und Pilates" },
-  { name: "Showküche", use: "Kochkurse mit Sterneköchen" },
+  { name: "Showküche", use: "Kochkurse mit Sterneköchen und Weintastings" },
   { name: "Blumenwerkstatt", use: "Sträuße binden und Floristik" },
 ];
 
@@ -20,7 +20,7 @@ export default function StandortPage() {
       <SectionHeading
         eyebrow="Standort"
         title="Atelierhaus München"
-        description="Eine Halle, neun Räume, zwölf Kursarten. Mitten in München gelegen — der erste Atelierhaus-Standort und die Blaupause für unser Franchise-Konzept."
+        description="Eine Halle, neun Räume, dreizehn Kursarten. Mitten in München gelegen — der erste Atelierhaus-Standort und die Blaupause für unser Franchise-Konzept."
       />
 
       <Image

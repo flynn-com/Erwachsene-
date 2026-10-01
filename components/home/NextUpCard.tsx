@@ -23,6 +23,7 @@ const categoryTagColors: Record<CategoryId, string> = {
   kochen: "var(--pastel-terracotta-dark)",
   beauty: "var(--pastel-lavender-dark)",
   floristik: "var(--pastel-sage-dark)",
+  wein: "var(--pastel-blush-dark)",
 };
 
 function splitTitle(title: string): { prefix: string; rest: string | null } {

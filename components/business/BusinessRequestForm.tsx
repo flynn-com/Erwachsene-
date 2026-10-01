@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BusinessOffer, Course } from "@/lib/mock-data/types";
 import { Button } from "@/components/ui/Button";
 import { formatPrice } from "@/lib/format";
@@ -42,22 +42,37 @@ function estimateTotal(pricePerPerson: number, groupSize: number, selectedExtras
   return total;
 }
 
+function isoDateInDays(days: number): string {
+  const date = new Date();
+  date.setDate(date.getDate() + days);
+  return date.toISOString().slice(0, 10);
+}
+
 export function BusinessRequestForm({ course, offer }: { course: Course; offer: BusinessOffer }) {
-  const [form, setForm] = useState<FormState>({
-    company: "",
-    contactName: "",
-    role: "",
-    email: "",
-    phone: "",
-    groupSize: offer.minGroup,
+  // Prototype: prefilled with the demo persona so testers only need to click through.
+  const [form, setForm] = useState<FormState>(() => ({
+    company: "Muster GmbH",
+    contactName: "Bernd Müller",
+    role: "HR / People & Culture",
+    email: "b.mueller@muster-gmbh.de",
+    phone: "+49 89 1234567",
+    groupSize: Math.min(Math.max(12, offer.minGroup), offer.maxGroup),
     preferredDate: "",
     alternativeDate: "",
     timeOfDay: "Nachmittag",
-    extras: [],
+    extras: ["catering"],
     invoiceToCompany: true,
-    message: "",
-  });
+    message: "Teamevent für unser Marketing-Team – gerne mit kurzer Begrüßung vorab.",
+  }));
   const [requestId, setRequestId] = useState<string | null>(null);
+
+  // Dates depend on "today", so set them after mount to avoid a hydration mismatch with the static build.
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setForm((prev) =>
+      prev.preferredDate ? prev : { ...prev, preferredDate: isoDateInDays(21), alternativeDate: isoDateInDays(28) }
+    );
+  }, []);
 
   const update = <K extends keyof FormState>(key: K, value: FormState[K]) => setForm((prev) => ({ ...prev, [key]: value }));
 

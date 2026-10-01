@@ -28,8 +28,11 @@ export function BookingStepper({ course, slots }: BookingStepperProps) {
   const { user, isLoaded } = useCustomerAuth();
 
   const [currentStep, setCurrentStep] = useState(0);
-  const [selectedSlot, setSelectedSlot] = useState<TimeSlot | null>(null);
-  const [details, setDetails] = useState<ParticipantDetails>({ name: "", email: "", participants: 1 });
+  // Prototype: preselect the first bookable slot so testers only need to click through.
+  const [selectedSlot, setSelectedSlot] = useState<TimeSlot | null>(
+    () => slots.find((slot) => slot.freeSpots > 0) ?? null
+  );
+  const [details, setDetails] = useState<ParticipantDetails>({ name: "", email: "", participants: 2 });
   const [bookingRef, setBookingRef] = useState<string | null>(null);
 
   useEffect(() => {

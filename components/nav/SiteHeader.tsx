@@ -25,7 +25,7 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
         <Link href="/" className="shrink-0">
           <Image
-            src="/atelierhaus-mark-orange.png"
+            src="/atelierhaus-mark-red.png"
             alt="Atelierhaus"
             width={256}
             height={338}

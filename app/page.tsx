@@ -230,7 +230,7 @@ export default function HomePage() {
             Standort-Daten, einen Equipment-Marktplatz und unseren Trend-Radar.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Button href="/kurse" variant="secondary">
+            <Button href="/kurse" variant="light">
               Kurse entdecken
             </Button>
             <Button href="/partner" variant="ghost-invert">

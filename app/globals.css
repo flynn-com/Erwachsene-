@@ -17,9 +17,9 @@
   /* Pale green tint for hover states on light buttons */
   --crafty-accent-tint: #e4efe8;
 
-  /* Petrol — secondary brand color for dark surfaces, primary buttons and selected states */
-  --crafty-petrol: #003544;
-  --crafty-petrol-dark: #00252f;
+  /* Brand green for dark surfaces, primary buttons and selected states (formerly petrol) */
+  --crafty-petrol: #2c6041;
+  --crafty-petrol-dark: #224b33;
   --crafty-border: rgba(43, 42, 40, 0.08);
 
   /* Pastel palette for illustrations, badges, gradients */

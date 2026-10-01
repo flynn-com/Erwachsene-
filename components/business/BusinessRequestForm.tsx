@@ -84,7 +84,7 @@ export function BusinessRequestForm({ course, offer }: { course: Course; offer: 
   if (requestId) {
     return (
       <div className="rounded-[32px] bg-white p-8 sm:p-10">
-        <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[var(--crafty-accent)] text-2xl" aria-hidden>
+        <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[var(--crafty-accent)] text-2xl text-white" aria-hidden>
           ✓
         </span>
         <h2 className="mt-6 text-3xl font-black tracking-tighter text-[var(--crafty-ink)] sm:text-4xl">

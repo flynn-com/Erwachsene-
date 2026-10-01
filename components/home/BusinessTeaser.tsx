@@ -10,7 +10,7 @@ export function BusinessTeaser({ items }: { items: { course: Course; offer: Busi
   return (
     <div className="grid overflow-hidden rounded-[36px] bg-[var(--crafty-ink)] text-white lg:grid-cols-[1fr_1.15fr]">
       <div className="flex flex-col justify-center p-8 sm:p-12">
-        <p className="text-sm font-bold uppercase tracking-[0.15em] text-[var(--pastel-sage)]">Für Firmen & HR</p>
+        <p className="text-sm font-bold uppercase tracking-[0.15em] text-[var(--crafty-accent-light)]">Für Firmen & HR</p>
         <h2 className="mt-3 text-4xl font-black leading-[1.02] tracking-tighter sm:text-5xl lg:text-6xl">
           Business-Trips für euer Team.
         </h2>
@@ -21,7 +21,7 @@ export function BusinessTeaser({ items }: { items: { course: Course; offer: Busi
         <ul className="mt-6 space-y-2 text-white/85">
           {benefits.map((benefit) => (
             <li key={benefit} className="flex gap-2">
-              <span aria-hidden className="text-[var(--pastel-sage)]">
+              <span aria-hidden className="text-[var(--crafty-accent-light)]">
                 ✓
               </span>
               {benefit}

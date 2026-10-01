@@ -8,8 +8,13 @@
   --crafty-surface: #ffffff;
   --crafty-ink: #2b2a28;
   --crafty-muted: #8a8377;
-  --crafty-accent: #cfe3cb;
-  --crafty-accent-dark: #4f6f52;
+  /* Accent — Atelierhaus red from the A mark */
+  --crafty-accent: #ff2f0e;
+  /* Text-safe red for small text and buttons with white labels (AA on cream/white) */
+  --crafty-accent-dark: #d42400;
+  --crafty-accent-hover: #b81f00;
+  /* Lighter coral for small text on dark surfaces */
+  --crafty-accent-light: #ff7a5c;
   --crafty-border: rgba(43, 42, 40, 0.08);
 
   /* Pastel palette for illustrations, badges, gradients */

@@ -126,7 +126,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-end">
             <div>
-              <p className="mb-3 text-sm font-bold uppercase tracking-[0.15em] text-[var(--pastel-sage)]">
+              <p className="mb-3 text-sm font-bold uppercase tracking-[0.15em] text-[var(--crafty-accent-light)]">
                 Warum Atelierhaus
               </p>
               <h2 className="text-4xl font-black leading-[1.05] tracking-tighter sm:text-5xl lg:text-6xl">

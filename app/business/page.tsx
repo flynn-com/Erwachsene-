@@ -18,7 +18,7 @@ export default function BusinessPage() {
     <div>
       <section className="bg-[var(--crafty-ink)] py-20 text-white sm:py-28">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <p className="text-sm font-bold uppercase tracking-[0.15em] text-[var(--pastel-sage)]">Für Firmen & HR</p>
+          <p className="text-sm font-bold uppercase tracking-[0.15em] text-[var(--crafty-accent-light)]">Für Firmen & HR</p>
           <h1 className="mt-3 max-w-4xl text-5xl font-black leading-[0.95] tracking-tighter sm:text-7xl">
             Business-Trips, die euer Team nicht vergisst.
           </h1>

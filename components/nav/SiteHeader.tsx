@@ -41,7 +41,7 @@ export function SiteHeader() {
                 key={link.href}
                 href={link.href}
                 className={`text-xs font-bold uppercase tracking-wide transition-colors hover:text-[var(--crafty-accent-dark)] ${
-                  pathname === link.href ? "text-[var(--crafty-accent-dark)]" : "text-[var(--crafty-accent-dark)]/80"
+                  pathname === link.href ? "text-[var(--crafty-accent-dark)]" : "text-[var(--crafty-ink)]"
                 }`}
               >
                 {link.label}

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import {
   courses,
@@ -40,6 +39,24 @@ export default function HomePage() {
     acc[course.category] = (acc[course.category] ?? 0) + 1;
     return acc;
   }, {});
+
+  const categoryImageOverrides: Partial<Record<string, string>> = {
+    toepfern: "/course-images/keramik-handaufbau.jpg",
+  };
+  const categoryImages = Object.fromEntries(
+    categories.map((category) => [
+      category.id,
+      categoryImageOverrides[category.id] ??
+        courses.find((course) => course.category === category.id && course.imageSrc)?.imageSrc,
+    ])
+  );
+
+  const stats = [
+    { value: courses.length, label: "Kurse" },
+    { value: categories.length, label: "Kursarten" },
+    { value: brandPartners.length, label: "Markenpartner" },
+    { value: 1, label: "Halle in München" },
+  ];
 
   return (
     <div>
@@ -99,102 +116,124 @@ export default function HomePage() {
         <NextUpCard items={upcoming} />
       </section>
 
-      <section className="border-y border-[var(--crafty-border)] bg-white py-16">
-        <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:grid-cols-2 sm:px-6">
-          <div className="rounded-[28px] bg-[var(--pastel-sage)]/40 p-8">
-            <h2 className="text-3xl font-extrabold tracking-tight text-[var(--crafty-ink)]">Alles unter einem Dach</h2>
-            <p className="mt-3 text-[var(--crafty-muted)]">
-              Statt zehn verschiedene Studios in der ganzen Stadt abzuklappern, findest du bei
-              Atelierhaus alle Kursarten in einer Halle mit mehreren Räumen – ein Ort, viele
-              Möglichkeiten.
+      <section className="bg-[var(--crafty-ink)] py-20 text-white sm:py-28">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-end">
+            <div>
+              <p className="mb-3 text-sm font-bold uppercase tracking-[0.15em] text-[var(--pastel-sage)]">
+                Warum Atelierhaus
+              </p>
+              <h2 className="text-4xl font-black leading-[1.05] tracking-tighter sm:text-5xl lg:text-6xl">
+                Alles unter einem Dach. Mit echten Marken.
+              </h2>
+            </div>
+            <p className="text-lg text-white/70">
+              Statt zehn verschiedene Studios in der ganzen Stadt abzuklappern, findest du bei Atelierhaus alle
+              Kursarten in einer Halle. Und mit Partnern wie Mercedes-Benz, RIMOWA, lululemon oder Hilti werden
+              Kurse zu Erlebnissen.
             </p>
           </div>
-          <div className="rounded-[28px] bg-[var(--pastel-blush)]/40 p-8">
-            <h2 className="text-3xl font-extrabold tracking-tight text-[var(--crafty-ink)]">Kurse mit echten Marken</h2>
-            <p className="mt-3 text-[var(--crafty-muted)]">
-              Male deinen eigenen RIMOWA-Koffer, sticke mit lululemon oder bearbeite Stein mit
-              Profi-Werkzeug von Hilti – unsere Markenkooperationen machen Kurse zu Erlebnissen.
-            </p>
-          </div>
-        </div>
-      </section>
 
-
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-        <SectionHeading eyebrow="Markenkooperationen" title="Unsere Partner" align="center" />
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-          {brandPartners.map((brand) =>
-            brand.logoSrc ? (
-              <div
-                key={brand.id}
-                className="flex h-20 w-40 items-center justify-center rounded-[24px] border border-black/5 bg-white p-5 shadow-sm"
-              >
-                <Image
-                  src={brand.logoSrc}
-                  alt={brand.name}
-                  width={140}
-                  height={40}
-                  className="h-full w-full object-contain"
-                />
+          <dl className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-[28px] bg-white/10 lg:grid-cols-4">
+            {stats.map((stat) => (
+              <div key={stat.label} className="bg-[var(--crafty-ink)] p-6 sm:p-8">
+                <dt className="sr-only">{stat.label}</dt>
+                <dd>
+                  <span className="block text-6xl font-black leading-none tracking-tighter sm:text-7xl">
+                    {stat.value}
+                  </span>
+                  <span className="mt-3 block text-sm font-semibold uppercase tracking-[0.15em] text-white/60">
+                    {stat.label}
+                  </span>
+                </dd>
               </div>
-            ) : (
-              <div
-                key={brand.id}
-                className="flex h-20 w-40 items-center justify-center rounded-[24px] border border-black/5 bg-white p-5 shadow-sm"
-              >
-                <span className="text-sm font-semibold" style={{ color: brand.accentColor }}>
-                  {brand.name}
-                </span>
-              </div>
-            )
-          )}
-        </div>
-      </section>
+            ))}
+          </dl>
 
-      <section className="bg-white py-16">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <SectionHeading
-            eyebrow="Werkstätten"
-            title="Was möchtest du als Nächstes können?"
-            description="Elf Werkstätten unter einem Dach — wähl deine Kategorie und leg direkt los."
-          />
-          <div className="mt-8">
-            <WorkshopGrid categories={categories} courseCounts={courseCounts} />
+          <div className="mt-16">
+            <p className="text-center text-sm font-bold uppercase tracking-[0.15em] text-white/50">Unsere Partner</p>
+            <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+              {brandPartners.map((brand) => (
+                <div
+                  key={brand.id}
+                  className="flex h-20 items-center justify-center rounded-[20px] bg-white px-6 py-4"
+                >
+                  {brand.logoSrc ? (
+                    <Image
+                      src={brand.logoSrc}
+                      alt={brand.name}
+                      width={140}
+                      height={40}
+                      className="h-full w-full object-contain"
+                    />
+                  ) : (
+                    <span className="text-center text-sm font-bold text-[var(--crafty-ink)]">{brand.name}</span>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="so-laeufts" className="mx-auto max-w-6xl scroll-mt-20 px-4 py-16 sm:px-6">
-        <SectionHeading eyebrow="So läuft's" title="Vom Sofa auf den Werkbank-Stuhl in vier Schritten" />
-        <div className="mt-8">
-          <HowItWorks />
+      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
+        <SectionHeading
+          eyebrow="Werkstätten"
+          title="Was möchtest du als Nächstes können?"
+          description={`${categories.length} Kursarten unter einem Dach — wähl deine Kategorie und leg direkt los.`}
+        />
+        <div className="mt-12">
+          <WorkshopGrid categories={categories} courseCounts={courseCounts} categoryImages={categoryImages} />
         </div>
       </section>
 
-      <section className="bg-white py-16">
+      <section id="so-laeufts" className="bg-white py-20 sm:py-28 scroll-mt-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <SectionHeading eyebrow="Wer dich anleitet" title="Echte Künstler:innen, persönlich geprüft" />
-          <div className="mt-8">
-            <InstructorGrid instructors={instructors} />
+          <SectionHeading eyebrow="So läuft's" title="Vom Sofa an die Werkbank in vier Schritten" />
+          <div className="mt-14">
+            <HowItWorks />
           </div>
         </div>
       </section>
 
-      <section id="faq" className="mx-auto max-w-3xl scroll-mt-20 px-4 py-16 sm:px-6">
-        <SectionHeading eyebrow="Gut zu wissen" title="Häufige Fragen" align="center" />
-        <div className="mt-8">
+      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
+        <SectionHeading eyebrow="Wer dich anleitet" title="Echte Künstler:innen, persönlich geprüft" />
+        <div className="mt-12">
+          <InstructorGrid instructors={instructors} />
+        </div>
+      </section>
+
+      <section id="faq" className="bg-white py-20 sm:py-28 scroll-mt-20">
+        <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-[1fr_1.4fr]">
+          <div>
+            <SectionHeading
+              eyebrow="Gut zu wissen"
+              title="Häufige Fragen"
+              description="Noch etwas unklar? Hier findest du die wichtigsten Antworten."
+            />
+          </div>
           <FaqAccordion items={faqItems} />
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-        <div className="rounded-[28px] bg-[var(--crafty-accent-dark)] px-8 py-14 text-center text-white">
-          <h2 className="text-4xl font-black tracking-tighter sm:text-6xl">Dein nächster freier Abend gehört dem Atelierhaus.</h2>
-          <p className="mx-auto mt-4 max-w-xl text-white/85">
+      <section className="px-4 py-20 sm:px-6 sm:py-28">
+        <div className="relative isolate mx-auto max-w-6xl overflow-hidden rounded-[36px] bg-[var(--crafty-ink)] px-6 py-20 text-center text-white sm:px-12 sm:py-28">
+          <Image
+            src="/standort-fassade.jpg"
+            alt=""
+            fill
+            sizes="(min-width: 1152px) 1152px, 100vw"
+            className="-z-20 object-cover opacity-40"
+          />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black/80 to-black/30" />
+          <h2 className="mx-auto max-w-4xl text-4xl font-black leading-[1.02] tracking-tighter sm:text-6xl lg:text-7xl">
+            Dein nächster freier Abend gehört dem Atelierhaus.
+          </h2>
+          <p className="mx-auto mt-6 max-w-xl text-lg text-white/75">
             Wir starten in München – und wachsen als Franchise weiter. Betreiber erhalten Zugriff auf
             Standort-Daten, einen Equipment-Marktplatz und unseren Trend-Radar.
           </p>
-          <div className="mt-6 flex flex-wrap justify-center gap-4">
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Button href="/kurse" variant="secondary">
               Kurse entdecken
             </Button>

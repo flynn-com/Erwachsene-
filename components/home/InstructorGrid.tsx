@@ -12,22 +12,24 @@ const avatarPastels = ["var(--pastel-sage)", "var(--pastel-blush)", "var(--paste
 
 export function InstructorGrid({ instructors }: { instructors: Instructor[] }) {
   return (
-    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {instructors.map((instructor, i) => (
-        <div key={instructor.id} className="rounded-[24px] border border-black/5 bg-white p-6 shadow-sm">
-          <span
-            className="flex h-12 w-12 items-center justify-center rounded-full text-sm font-bold text-[var(--crafty-ink)]"
+        <div key={instructor.id} className="flex flex-col rounded-[28px] bg-white p-3">
+          <div
+            className="flex aspect-square items-center justify-center rounded-[22px] text-6xl font-black tracking-tighter text-[var(--crafty-ink)]/80"
             style={{ backgroundColor: avatarPastels[i % avatarPastels.length] }}
             aria-hidden
           >
             {getInitials(instructor.name)}
-          </span>
-          <h3 className="mt-4 font-bold text-[var(--crafty-ink)]">{instructor.name}</h3>
-          <p className="text-sm font-medium text-[var(--crafty-accent-dark)]">{instructor.specialty}</p>
-          <p className="mt-2 text-sm text-[var(--crafty-muted)]">{instructor.bio}</p>
-          <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-[var(--crafty-muted)]">
-            {instructor.yearsExperience} Jahre Erfahrung
-          </p>
+          </div>
+          <div className="flex flex-1 flex-col px-3 pb-3 pt-5">
+            <p className="text-xs font-bold uppercase tracking-[0.15em] text-[var(--crafty-accent-dark)]">
+              {instructor.specialty}
+            </p>
+            <h3 className="mt-2 text-2xl font-extrabold tracking-tight text-[var(--crafty-ink)]">{instructor.name}</h3>
+            <p className="mt-2 flex-1 text-sm text-[var(--crafty-muted)]">{instructor.bio}</p>
+            <p className="mt-4 text-sm font-bold text-[var(--crafty-ink)]">{instructor.yearsExperience} Jahre Erfahrung</p>
+          </div>
         </div>
       ))}
     </div>

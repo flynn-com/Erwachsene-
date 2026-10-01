@@ -15,6 +15,7 @@ import { WorkshopGrid } from "@/components/home/WorkshopGrid";
 import { HowItWorks } from "@/components/home/HowItWorks";
 import { InstructorGrid } from "@/components/home/InstructorGrid";
 import { FaqAccordion } from "@/components/home/FaqAccordion";
+import { ImpressionGallery } from "@/components/home/ImpressionGallery";
 
 export default function HomePage() {
   const brandCourses = courses.flatMap((course) => {
@@ -184,6 +185,17 @@ export default function HomePage() {
         />
         <div className="mt-12">
           <WorkshopGrid categories={categories} courseCounts={courseCounts} categoryImages={categoryImages} />
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 pb-20 sm:px-6 sm:pb-28">
+        <SectionHeading
+          eyebrow="Einblicke"
+          title="So sieht es in unseren Kursen aus"
+          description="Echte Werkstätten, lange Tische und viel Raum zum Ausprobieren."
+        />
+        <div className="mt-12">
+          <ImpressionGallery />
         </div>
       </section>
 

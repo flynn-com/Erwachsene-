@@ -38,7 +38,19 @@ export default function HomePage() {
 
   return (
     <div>
-      <section className="px-4 pb-4 pt-12 sm:px-6 sm:pt-16">
+      <section className="relative isolate overflow-hidden px-4 pb-16 pt-12 sm:px-6 sm:pt-16">
+        <Image
+          src="/hero-atelierhaus.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="-z-20 object-cover object-center"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-10 bg-gradient-to-b from-white/85 via-white/55 to-white/85"
+        />
 
         <div className="mx-auto max-w-3xl text-center">
           <Image
@@ -49,7 +61,7 @@ export default function HomePage() {
             priority
             className="mx-auto h-auto w-full max-w-xl"
           />
-          <p className="mt-4 text-lg uppercase tracking-[0.15em] text-[var(--crafty-muted)]">
+          <p className="mt-4 text-lg uppercase tracking-[0.15em] text-[var(--crafty-ink)]">
             Ein Haus voller Ideen
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">

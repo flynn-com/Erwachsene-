@@ -225,7 +225,7 @@ export function BusinessRequestForm({ course, offer }: { course: Course; offer: 
                   onClick={() => update("timeOfDay", option)}
                   className={`rounded-full px-5 py-2 text-sm font-semibold transition-colors ${
                     form.timeOfDay === option
-                      ? "bg-[var(--crafty-petrol)] text-white"
+                      ? "bg-[var(--crafty-ink)] text-white"
                       : "border border-[var(--crafty-border)] bg-white text-[var(--crafty-ink)] hover:border-[var(--crafty-ink)]"
                   }`}
                 >
@@ -289,7 +289,7 @@ export function BusinessRequestForm({ course, offer }: { course: Course; offer: 
       </div>
 
       <aside className="lg:sticky lg:top-24 lg:self-start">
-        <div className="rounded-[28px] bg-[var(--crafty-petrol)] p-6 text-white sm:p-8">
+        <div className="rounded-[28px] bg-[var(--crafty-ink)] p-6 text-white sm:p-8">
           <p className="text-xs font-bold uppercase tracking-[0.15em] text-white/60">Deine Anfrage</p>
           <h3 className="mt-2 text-xl font-extrabold leading-tight tracking-tight">{course.title}</h3>
           <ul className="mt-5 space-y-2 text-sm text-white/80">

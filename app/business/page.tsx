@@ -16,7 +16,7 @@ export default function BusinessPage() {
 
   return (
     <div>
-      <section className="bg-[var(--crafty-petrol)] py-20 text-white sm:py-28">
+      <section className="bg-[var(--crafty-ink)] py-20 text-white sm:py-28">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <p className="text-sm font-bold uppercase tracking-[0.15em] text-[var(--crafty-accent-light)]">Für Firmen & HR</p>
           <h1 className="mt-3 max-w-4xl text-5xl font-black leading-[0.95] tracking-tighter sm:text-7xl">
@@ -28,7 +28,7 @@ export default function BusinessPage() {
           </p>
           <div className="mt-14 grid gap-px overflow-hidden rounded-[28px] bg-white/10 sm:grid-cols-3">
             {benefits.map((benefit) => (
-              <div key={benefit.title} className="bg-[var(--crafty-petrol)] p-6 sm:p-8">
+              <div key={benefit.title} className="bg-[var(--crafty-ink)] p-6 sm:p-8">
                 <h2 className="text-xl font-extrabold tracking-tight">{benefit.title}</h2>
                 <p className="mt-2 text-sm text-white/65">{benefit.text}</p>
               </div>

@@ -24,17 +24,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-[var(--crafty-border)] bg-[var(--crafty-bg)]/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
         <Link href="/" className="shrink-0">
-          <span className="flex items-center gap-2.5">
-            <Image src="/atelierhaus-mark.png" alt="" width={256} height={338} className="h-9 w-auto" priority />
-            <Image
-              src="/atelierhaus-wordmark.png"
-              alt="Atelierhaus"
-              width={515}
-              height={60}
-              className="h-3.5 w-auto sm:h-4"
-              priority
-            />
-          </span>
+          <Image src="/atelierhaus-mark.png" alt="Atelierhaus" width={256} height={338} className="h-10 w-auto" priority />
         </Link>
 
         {!isPartner && (

@@ -66,7 +66,7 @@ export default function HomePage() {
 
   return (
     <div>
-      <section className="relative isolate flex min-h-[72vh] items-center overflow-hidden px-4 py-20 sm:px-6">
+      <section className="relative isolate flex min-h-[66vh] items-end overflow-hidden px-4 pb-14 pt-28 sm:px-6 sm:pb-16">
         <Image
           src="/hero-start.jpg"
           alt=""
@@ -77,26 +77,26 @@ export default function HomePage() {
         />
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-gradient-to-t from-black/75 via-black/50 to-black/30"
+          className="absolute inset-0 -z-10 bg-gradient-to-t from-black/80 via-black/35 to-black/10"
         />
 
-        <div className="mx-auto flex w-full max-w-6xl flex-col items-center text-center text-white">
+        <div className="mx-auto w-full max-w-6xl text-white">
           <Image
             src="/atelierhaus-logo-full.png"
             alt="Atelierhaus"
             width={515}
             height={417}
             priority
-            className="mx-auto h-auto w-40 invert sm:w-56"
+            className="h-auto w-40 invert sm:w-52"
           />
           <h1 className="mt-8 max-w-4xl text-5xl font-black leading-[0.95] tracking-tighter sm:text-7xl lg:text-8xl">
             Ein Haus voller Ideen.
           </h1>
-          <p className="mx-auto mt-6 max-w-xl text-lg text-white/80 sm:text-xl">
+          <p className="mt-6 max-w-xl text-lg text-white/80 sm:text-xl">
             Zeichnen, Töpfern, Floristik, Weintasting und mehr – mit Marken wie Mercedes-Benz, RIMOWA und
             lululemon. Alles in einer Halle in München.
           </p>
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
+          <div className="mt-10 flex flex-wrap gap-4">
             <Button href="#markenkurse" variant="secondary">
               Kreativ mit Brands
             </Button>

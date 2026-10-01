@@ -82,12 +82,12 @@ export default function HomePage() {
 
         <div className="mx-auto w-full max-w-6xl text-white">
           <Image
-            src="/atelierhaus-logo-full.png"
+            src="/atelierhaus-wordmark-bold.png"
             alt="Atelierhaus"
-            width={515}
-            height={417}
+            width={843}
+            height={90}
             priority
-            className="h-auto w-40 invert sm:w-52"
+            className="h-auto w-full max-w-xs invert sm:max-w-md"
           />
           <h1 className="mt-8 max-w-4xl text-5xl font-black leading-[0.95] tracking-tighter sm:text-7xl lg:text-8xl">
             Ein Haus voller Ideen.

@@ -36,7 +36,24 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ s
       </div>
 
       <div className="mt-8">
-        {brand && <BrandCooperationBadge brand={brand} />}
+        {brand && (
+          <div className="flex flex-wrap items-center gap-4">
+            <div className="flex h-16 items-center rounded-2xl border border-black/5 bg-white px-5 shadow-sm">
+              {brand.logoSrc ? (
+                <Image
+                  src={brand.logoSrc}
+                  alt={brand.name}
+                  width={160}
+                  height={40}
+                  className="h-9 w-auto max-w-[160px] object-contain"
+                />
+              ) : (
+                <span className="text-sm font-bold text-[var(--crafty-ink)]">{brand.name}</span>
+              )}
+            </div>
+            <BrandCooperationBadge brand={brand} />
+          </div>
+        )}
         <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-[var(--crafty-ink)] sm:text-4xl">
           {course.title}
         </h1>

@@ -8,13 +8,14 @@
   --crafty-surface: #ffffff;
   --crafty-ink: #2b2a28;
   --crafty-muted: #8a8377;
-  /* Accent — Atelierhaus red from the A mark */
-  --crafty-accent: #ff2f0e;
-  /* Text-safe red for small text and buttons with white labels (AA on cream/white) */
-  --crafty-accent-dark: #d42400;
-  --crafty-accent-hover: #b81f00;
-  /* Lighter coral for small text on dark surfaces */
-  --crafty-accent-light: #ff7a5c;
+  /* Accent — petrol */
+  --crafty-accent: #003544;
+  --crafty-accent-dark: #003544;
+  --crafty-accent-hover: #00252f;
+  /* Light petrol for small text on dark surfaces */
+  --crafty-accent-light: #8cc4d1;
+  /* Pale petrol tint for hover states on light buttons */
+  --crafty-accent-tint: #e3eef1;
 
   /* Petrol — secondary brand color for dark surfaces, primary buttons and selected states */
   --crafty-petrol: #003544;

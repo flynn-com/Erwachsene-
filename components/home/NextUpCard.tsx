@@ -11,14 +11,14 @@ type UpcomingItem = {
 };
 
 const categoryTagColors: Record<CategoryId, string> = {
-  zeichnen: "var(--pastel-terracotta-dark)",
-  malen: "var(--pastel-terracotta-dark)",
+  zeichnen: "var(--crafty-petrol)",
+  malen: "var(--crafty-petrol)",
   toepfern: "var(--pastel-butter-dark)",
   sticken: "var(--pastel-blush-dark)",
   steinhauen: "var(--crafty-muted)",
   "rage-room": "var(--pastel-blush-dark)",
   yoga: "var(--pastel-sage-dark)",
-  kochen: "var(--pastel-terracotta-dark)",
+  kochen: "var(--crafty-petrol)",
   beauty: "var(--pastel-lavender-dark)",
   floristik: "var(--pastel-sage-dark)",
   wein: "var(--pastel-blush-dark)",

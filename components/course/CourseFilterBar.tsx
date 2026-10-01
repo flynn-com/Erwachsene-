@@ -57,7 +57,7 @@ export function CourseFilterBar({
             onChange={(e) => onBrandToggle(e.target.checked)}
             className="h-4 w-4 rounded border-[var(--crafty-border)] accent-[var(--crafty-accent-dark)]"
           />
-          Nur Markenkooperationen anzeigen
+          Markenkooperationen
         </label>
         <label className="flex w-fit items-center gap-2 text-sm font-medium text-[var(--crafty-ink)]">
           <input
@@ -66,7 +66,7 @@ export function CourseFilterBar({
             onChange={(e) => onBusinessToggle(e.target.checked)}
             className="h-4 w-4 rounded border-[var(--crafty-border)] accent-[var(--crafty-accent-dark)]"
           />
-          Nur für Teams buchbar (Business-Trip)
+          Business-Trips für Teams
         </label>
       </div>
     </div>

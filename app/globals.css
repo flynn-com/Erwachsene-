@@ -45,3 +45,22 @@ body {
   color: var(--crafty-ink);
   font-family: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
 }
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 55s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}

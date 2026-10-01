@@ -16,6 +16,7 @@ import { HowItWorks } from "@/components/home/HowItWorks";
 import { InstructorGrid } from "@/components/home/InstructorGrid";
 import { FaqAccordion } from "@/components/home/FaqAccordion";
 import { ImpressionGallery } from "@/components/home/ImpressionGallery";
+import { PartnerMarquee } from "@/components/home/PartnerMarquee";
 
 export default function HomePage() {
   const brandCourses = courses.flatMap((course) => {
@@ -128,30 +129,15 @@ export default function HomePage() {
               Kurse zu Erlebnissen.
             </p>
           </div>
+        </div>
+      </section>
 
-          <div className="mt-16">
-            <p className="text-center text-sm font-bold uppercase tracking-[0.15em] text-white/50">Unsere Partner</p>
-            <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-              {brandPartners.map((brand) => (
-                <div
-                  key={brand.id}
-                  className="flex h-20 items-center justify-center rounded-[20px] bg-white px-6 py-4"
-                >
-                  {brand.logoSrc ? (
-                    <Image
-                      src={brand.logoSrc}
-                      alt={brand.name}
-                      width={140}
-                      height={40}
-                      className="h-full w-full object-contain"
-                    />
-                  ) : (
-                    <span className="text-center text-sm font-bold text-[var(--crafty-ink)]">{brand.name}</span>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
+      <section className="border-b border-[var(--crafty-border)] bg-white py-12 sm:py-14">
+        <p className="text-center text-sm font-bold uppercase tracking-[0.15em] text-[var(--crafty-muted)]">
+          Unsere Partner
+        </p>
+        <div className="mt-8">
+          <PartnerMarquee brands={brandPartners} />
         </div>
       </section>
 

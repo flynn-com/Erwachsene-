@@ -31,6 +31,21 @@ export const courses: Course[] = [
     maxParticipants: 10,
   },
   {
+    slug: "mercedes-design-sketching",
+    title: "Mercedes-Benz Design Lab: Zeichne dein Traumauto",
+    category: "zeichnen",
+    shortDescription: "Autodesign skizzieren mit einem Designer aus dem Mercedes-Benz Designstudio.",
+    description:
+      "Ein Designer aus dem Mercedes-Benz Designstudio zeigt dir, wie aus der ersten Linie ein Auto wird: Proportionen, Perspektive, Licht und Schatten. Mit Marker und Bleistift skizzierst du dein eigenes Concept Car – von der Seitenansicht bis zur dynamischen Dreiviertelansicht. Zum Abschluss besprechen wir die Entwürfe gemeinsam, die besten werden in der Halle ausgestellt. Inklusive Getränke und Snacks.",
+    durationMinutes: 180,
+    price: 89,
+    room: "Atelier 1 & 2",
+    brandPartnerId: "mercedes-benz",
+    imageSrc: "/course-images/mercedes-design.jpg",
+    level: "Alle Level",
+    maxParticipants: 12,
+  },
+  {
     slug: "aquarell-grundkurs",
     title: "Aquarellmalerei Grundkurs",
     category: "malen",

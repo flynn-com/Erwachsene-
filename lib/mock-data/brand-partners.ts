@@ -56,4 +56,11 @@ export const brandPartners: BrandPartner[] = [
     accentColor: "#111111",
     logoSrc: "/brands/haus-labs.svg",
   },
+  {
+    id: "mercedes-benz",
+    name: "Mercedes-Benz",
+    blurb: "Automobildesign zum Mitmachen – Skizzieren mit dem Mercedes-Benz Designteam.",
+    accentColor: "#111111",
+    logoSrc: "/brands/mercedes-benz.svg",
+  },
 ];

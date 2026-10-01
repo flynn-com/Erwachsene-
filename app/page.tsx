@@ -58,7 +58,7 @@ export default function HomePage() {
     <div>
       <section className="relative isolate flex min-h-[66vh] items-end overflow-hidden px-4 pb-14 pt-28 sm:px-6 sm:pb-16">
         <Image
-          src="/hero-atelierhaus.jpg"
+          src="/hero-start.jpg"
           alt=""
           fill
           priority

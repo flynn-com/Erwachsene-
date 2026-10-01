@@ -12,7 +12,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Atelierhaus – Kreativkurse unter einem Dach",
   description:
-    "Atelierhaus ist die Location in München, die Zeichnen, Malen, Töpfern, Sticken, Steinhauen, Rage Room, Yoga, Pilates und Kochkurse unter einem Dach bündelt – mit echten Markenkooperationen.",
+    "Atelierhaus ist die Location in München, die Zeichnen, Malen, Töpfern, Sticken, Steinhauen, Rage Room, Yoga, Kochen, Floristik und Weintastings unter einem Dach bündelt – mit echten Markenkooperationen.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

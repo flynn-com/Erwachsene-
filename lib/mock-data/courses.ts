@@ -163,32 +163,6 @@ export const courses: Course[] = [
     maxParticipants: 4,
   },
   {
-    slug: "lasertag-arena",
-    title: "Lasertag Arena",
-    category: "lasertag",
-    shortDescription: "Team-Action in der hauseigenen Lasertag-Arena.",
-    description:
-      "Zwei Teams, eine Arena, jede Menge Action. Perfekt für Gruppen, Teamevents oder einfach einen actionreichen Nachmittag.",
-    durationMinutes: 60,
-    price: 29,
-    room: "Lasertag-Arena",
-    level: "Alle Level",
-    maxParticipants: 20,
-  },
-  {
-    slug: "pilates-reformer",
-    title: "Pilates Reformer Basics",
-    category: "pilates",
-    shortDescription: "Einstieg ins Reformer-Pilates für Kraft und Haltung.",
-    description:
-      "Ein Einsteigerkurs am Pilates-Reformer-Gerät: Kräftigung der Körpermitte, Haltungsverbesserung und Körperbewusstsein.",
-    durationMinutes: 60,
-    price: 28,
-    room: "Bewegungsraum",
-    level: "Einsteiger",
-    maxParticipants: 10,
-  },
-  {
     slug: "sternekueche-zuhause",
     title: "Kochkurs: Sterneküche für Zuhause",
     category: "kochen",

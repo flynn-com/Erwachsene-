@@ -52,12 +52,6 @@ export default function HomePage() {
     ])
   );
 
-  const stats = [
-    { value: courses.length, label: "Kurse" },
-    { value: categories.length, label: "Kursarten" },
-    { value: brandPartners.length, label: "Markenpartner" },
-    { value: 1, label: "Halle in München" },
-  ];
 
   return (
     <div>
@@ -134,22 +128,6 @@ export default function HomePage() {
               Kurse zu Erlebnissen.
             </p>
           </div>
-
-          <dl className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-[28px] bg-white/10 lg:grid-cols-4">
-            {stats.map((stat) => (
-              <div key={stat.label} className="bg-[var(--crafty-ink)] p-6 sm:p-8">
-                <dt className="sr-only">{stat.label}</dt>
-                <dd>
-                  <span className="block text-6xl font-black leading-none tracking-tighter sm:text-7xl">
-                    {stat.value}
-                  </span>
-                  <span className="mt-3 block text-sm font-semibold uppercase tracking-[0.15em] text-white/60">
-                    {stat.label}
-                  </span>
-                </dd>
-              </div>
-            ))}
-          </dl>
 
           <div className="mt-16">
             <p className="text-center text-sm font-bold uppercase tracking-[0.15em] text-white/50">Unsere Partner</p>

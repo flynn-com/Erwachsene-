@@ -74,7 +74,7 @@ export function BookingStepper({ course, slots }: BookingStepperProps) {
           <li key={step} className="flex items-center gap-2">
             <span
               className={`flex h-6 w-6 items-center justify-center rounded-full ${
-                i <= currentStep ? "bg-[var(--crafty-ink)] text-white" : "bg-[var(--crafty-bg)] text-[var(--crafty-muted)]"
+                i <= currentStep ? "bg-[var(--crafty-petrol)] text-white" : "bg-[var(--crafty-bg)] text-[var(--crafty-muted)]"
               }`}
             >
               {i + 1}

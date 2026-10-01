@@ -24,7 +24,7 @@ export function StepSlotSelect({ slots, selectedSlot, onSelect, onNext }: StepSl
               onClick={() => onSelect(slot)}
               className={`rounded-xl border p-4 text-left transition-colors disabled:cursor-not-allowed disabled:opacity-40 ${
                 isSelected
-                  ? "border-[var(--crafty-ink)] bg-[var(--crafty-ink)] text-white"
+                  ? "border-[var(--crafty-petrol)] bg-[var(--crafty-petrol)] text-white"
                   : "border-[var(--crafty-border)] hover:border-[var(--crafty-ink)]"
               }`}
             >

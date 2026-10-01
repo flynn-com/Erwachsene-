@@ -122,7 +122,7 @@ export default function HomePage() {
         <NextUpCard items={upcoming} />
       </section>
 
-      <section className="bg-[var(--crafty-ink)] py-20 text-white sm:py-28">
+      <section className="bg-[var(--crafty-petrol)] py-20 text-white sm:py-28">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-end">
             <div>
@@ -209,7 +209,7 @@ export default function HomePage() {
       </section>
 
       <section className="px-4 py-20 sm:px-6 sm:py-28">
-        <div className="relative isolate mx-auto max-w-6xl overflow-hidden rounded-[36px] bg-[var(--crafty-ink)] px-6 py-20 text-center text-white sm:px-12 sm:py-28">
+        <div className="relative isolate mx-auto max-w-6xl overflow-hidden rounded-[36px] bg-[var(--crafty-petrol)] px-6 py-20 text-center text-white sm:px-12 sm:py-28">
           <Image
             src="/standort-fassade.jpg"
             alt=""
@@ -217,7 +217,7 @@ export default function HomePage() {
             sizes="(min-width: 1152px) 1152px, 100vw"
             className="-z-20 object-cover opacity-40"
           />
-          <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black/80 to-black/30" />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[var(--crafty-petrol)] via-[var(--crafty-petrol)]/80 to-[var(--crafty-petrol)]/40" />
           <h2 className="mx-auto max-w-4xl text-4xl font-black leading-[1.02] tracking-tighter sm:text-6xl lg:text-7xl">
             Dein nächster freier Abend gehört dem Atelierhaus.
           </h2>

@@ -72,7 +72,7 @@ export function SiteHeader() {
             <Link
               href="/"
               className={`rounded-full px-3 py-1.5 transition-colors ${
-                !isPartner ? "bg-[var(--crafty-ink)] text-white" : "text-[var(--crafty-muted)]"
+                !isPartner ? "bg-[var(--crafty-petrol)] text-white" : "text-[var(--crafty-muted)]"
               }`}
             >
               Kunde
@@ -80,7 +80,7 @@ export function SiteHeader() {
             <Link
               href="/partner"
               className={`rounded-full px-3 py-1.5 transition-colors ${
-                isPartner ? "bg-[var(--crafty-ink)] text-white" : "text-[var(--crafty-muted)]"
+                isPartner ? "bg-[var(--crafty-petrol)] text-white" : "text-[var(--crafty-muted)]"
               }`}
             >
               Partner

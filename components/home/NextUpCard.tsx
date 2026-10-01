@@ -35,7 +35,7 @@ function splitTitle(title: string): { prefix: string; rest: string | null } {
 
 export function NextUpCard({ items }: { items: UpcomingItem[] }) {
   return (
-    <div className="w-full rounded-[28px] bg-[var(--crafty-ink)] p-6 sm:p-8">
+    <div className="w-full rounded-[28px] bg-[var(--crafty-petrol)] p-6 sm:p-8">
       <h2 className="text-center text-3xl font-black tracking-tighter text-white sm:text-4xl">Nächste Termine in München</h2>
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
         {items.map(({ slot, course, categoryId, categoryName, brandName }) => {

@@ -54,7 +54,7 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ s
         </div>
 
         {businessOffer && (
-          <section className="mt-12 overflow-hidden rounded-[32px] bg-[var(--crafty-ink)] p-6 text-white sm:p-10">
+          <section className="mt-12 overflow-hidden rounded-[32px] bg-[var(--crafty-petrol)] p-6 text-white sm:p-10">
             <p className="text-xs font-bold uppercase tracking-[0.15em] text-[var(--crafty-accent-light)]">Für Firmen & HR</p>
             <h2 className="mt-2 text-3xl font-black tracking-tighter sm:text-4xl">Business-Trip für dein Team</h2>
             <p className="mt-3 max-w-xl text-white/70">

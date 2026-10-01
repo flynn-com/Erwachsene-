@@ -28,7 +28,7 @@ export function CourseFilterBar({
           onClick={() => onCategoryChange(null)}
           className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
             activeCategory === null
-              ? "bg-[var(--crafty-ink)] text-white"
+              ? "bg-[var(--crafty-petrol)] text-white"
               : "bg-[var(--crafty-surface)] text-[var(--crafty-ink)] border border-[var(--crafty-border)] hover:border-[var(--crafty-ink)]"
           }`}
         >
@@ -40,7 +40,7 @@ export function CourseFilterBar({
             onClick={() => onCategoryChange(category.id)}
             className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
               activeCategory === category.id
-                ? "bg-[var(--crafty-ink)] text-white"
+                ? "bg-[var(--crafty-petrol)] text-white"
                 : "bg-[var(--crafty-surface)] text-[var(--crafty-ink)] border border-[var(--crafty-border)] hover:border-[var(--crafty-ink)]"
             }`}
           >

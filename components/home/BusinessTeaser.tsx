@@ -8,7 +8,7 @@ const benefits = ["Exklusiv für euer Team", "Rechnung auf das Unternehmen", "An
 
 export function BusinessTeaser({ items }: { items: { course: Course; offer: BusinessOffer }[] }) {
   return (
-    <div className="grid overflow-hidden rounded-[36px] bg-[var(--crafty-ink)] text-white lg:grid-cols-[1fr_1.15fr]">
+    <div className="grid overflow-hidden rounded-[36px] bg-[var(--crafty-petrol)] text-white lg:grid-cols-[1fr_1.15fr]">
       <div className="flex flex-col justify-center p-8 sm:p-12">
         <p className="text-sm font-bold uppercase tracking-[0.15em] text-[var(--crafty-accent-light)]">Für Firmen & HR</p>
         <h2 className="mt-3 text-4xl font-black leading-[1.02] tracking-tighter sm:text-5xl lg:text-6xl">

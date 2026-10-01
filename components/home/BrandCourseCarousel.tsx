@@ -17,7 +17,7 @@ function ArrowButton({ direction, onClick }: { direction: "left" | "right"; onCl
       type="button"
       onClick={onClick}
       aria-label={direction === "left" ? "Vorherige Kurse" : "Nächste Kurse"}
-      className="flex h-12 w-12 items-center justify-center rounded-full border border-[var(--crafty-ink)]/15 bg-white text-lg text-[var(--crafty-ink)] transition-colors hover:bg-[var(--crafty-ink)] hover:text-white"
+      className="flex h-12 w-12 items-center justify-center rounded-full border border-[var(--crafty-ink)]/15 bg-white text-lg text-[var(--crafty-ink)] transition-colors hover:bg-[var(--crafty-petrol)] hover:text-white"
     >
       {direction === "left" ? "←" : "→"}
     </button>

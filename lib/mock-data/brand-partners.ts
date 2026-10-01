@@ -49,4 +49,11 @@ export const brandPartners: BrandPartner[] = [
     accentColor: "#6B645C",
     logoSrc: "/brands/rhode.png",
   },
+  {
+    id: "haus-labs",
+    name: "Haus Labs",
+    blurb: "Clean-Beauty-Make-up mit Profi-Pinseln für deinen eigenen Signature-Look.",
+    accentColor: "#111111",
+    logoSrc: "/brands/haus-labs.svg",
+  },
 ];

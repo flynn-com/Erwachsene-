@@ -1,6 +1,6 @@
 import { categories } from "@/lib/mock-data";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
+import Image from "next/image";
 
 const rooms = [
   { name: "Atelier 1 & 2", use: "Zeichnen, Malen, Markenkooperationen" },
@@ -22,7 +22,15 @@ export default function StandortPage() {
         description="Eine Halle, acht Räume, zehn Kursarten. Mitten in München gelegen — der erste Atelierhaus-Standort und die Blaupause für unser Franchise-Konzept."
       />
 
-      <PlaceholderImage seed="standort-muenchen" label="Atelierhaus Halle München" className="mt-8 h-64 w-full rounded-[28px]" />
+      <Image
+        src="/hero-atelierhaus.jpg"
+        alt="Backsteinhalle des Atelierhaus München mit großen Rundbogenfenstern"
+        width={1500}
+        height={837}
+        priority
+        sizes="(min-width: 1024px) 976px, 100vw"
+        className="mt-8 h-auto w-full rounded-[28px] object-cover"
+      />
 
       <div className="mt-10 grid gap-4 sm:grid-cols-2">
         {rooms.map((room) => (

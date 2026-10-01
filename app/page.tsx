@@ -98,7 +98,7 @@ export default function HomePage() {
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Button href="#markenkurse" variant="secondary">
-              Markenkurse entdecken
+              Kreativ mit Brands
             </Button>
             <Button href="/kurse" variant="ghost-invert">
               Alle Kurse ansehen

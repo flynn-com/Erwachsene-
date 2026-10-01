@@ -6,6 +6,7 @@ import {
   timeSlots,
   instructors,
   faqItems,
+  businessOffers,
 } from "@/lib/mock-data";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
@@ -17,6 +18,7 @@ import { InstructorGrid } from "@/components/home/InstructorGrid";
 import { FaqAccordion } from "@/components/home/FaqAccordion";
 import { ImpressionGallery } from "@/components/home/ImpressionGallery";
 import { PartnerMarquee } from "@/components/home/PartnerMarquee";
+import { BusinessTeaser } from "@/components/home/BusinessTeaser";
 
 export default function HomePage() {
   const brandCourses = courses.flatMap((course) => {
@@ -25,6 +27,14 @@ export default function HomePage() {
     const categoryName = categories.find((c) => c.id === course.category)?.name ?? course.category;
     return [{ course, brand, categoryName }];
   });
+
+  const businessTeaserItems = ["mercedes-design-sketching", "sternekueche-zuhause", "weintasting-vom-fass"].flatMap(
+    (slug) => {
+      const course = courses.find((c) => c.slug === slug);
+      const offer = businessOffers.find((o) => o.courseSlug === slug);
+      return course && offer ? [{ course, offer }] : [];
+    }
+  );
 
   const upcoming = [...timeSlots]
     .filter((slot) => slot.freeSpots > 0)
@@ -160,6 +170,12 @@ export default function HomePage() {
         />
         <div className="mt-12">
           <ImpressionGallery />
+        </div>
+      </section>
+
+      <section className="px-4 pb-20 sm:px-6 sm:pb-28">
+        <div className="mx-auto max-w-6xl">
+          <BusinessTeaser items={businessTeaserItems} />
         </div>
       </section>
 

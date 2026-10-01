@@ -13,6 +13,7 @@ const categoryIcons: Record<CategoryId, string> = {
   pilates: "🤸",
   kochen: "🍳",
   beauty: "🧴",
+  floristik: "💐",
 };
 
 type WorkshopGridProps = {

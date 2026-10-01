@@ -42,6 +42,14 @@ export interface Course {
   maxParticipants: number;
 }
 
+export interface BusinessOffer {
+  courseSlug: string;
+  minGroup: number;
+  maxGroup: number;
+  pricePerPerson: number;
+  highlights: string[];
+}
+
 export interface TimeSlot {
   id: string;
   courseSlug: string;

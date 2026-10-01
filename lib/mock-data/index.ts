@@ -9,3 +9,4 @@ export { equipment } from "./equipment";
 export { trendSignals } from "./trend-signals";
 export { instructors } from "./instructors";
 export { faqItems } from "./faq";
+export { businessOffers, getBusinessOffer } from "./business-offers";

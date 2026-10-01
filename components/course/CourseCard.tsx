@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Course, BrandPartner, Category } from "@/lib/mock-data/types";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
+import { getBusinessOffer } from "@/lib/mock-data/business-offers";
 
 type CourseCardProps = {
   course: Course;
@@ -37,6 +38,11 @@ export function CourseCard({ course, category, brand }: CourseCardProps) {
           />
         ) : (
           <PlaceholderImage seed={course.slug} label={category?.name ?? course.category} className="h-full w-full" />
+        )}
+        {getBusinessOffer(course.slug) && (
+          <span className="absolute left-3 top-3 rounded-full bg-[var(--crafty-ink)] px-3 py-1 text-xs font-bold text-white">
+            Für Teams buchbar
+          </span>
         )}
       </div>
 

@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { courses, categories, brandPartners } from "@/lib/mock-data";
+import { courses, categories, brandPartners, getBusinessOffer } from "@/lib/mock-data";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { BrandCooperationBadge } from "@/components/course/BrandCooperationBadge";
 import { Button } from "@/components/ui/Button";
@@ -17,6 +17,7 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ s
 
   const category = categories.find((c) => c.id === course.category);
   const brand = brandPartners.find((b) => b.id === course.brandPartnerId);
+  const businessOffer = getBusinessOffer(course.slug);
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6">
@@ -51,6 +52,41 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ s
         <div className="mt-8">
           <Button href={`/kurse/${course.slug}/buchen`}>Jetzt buchen</Button>
         </div>
+
+        {businessOffer && (
+          <section className="mt-12 overflow-hidden rounded-[32px] bg-[var(--crafty-ink)] p-6 text-white sm:p-10">
+            <p className="text-xs font-bold uppercase tracking-[0.15em] text-[var(--pastel-sage)]">Für Firmen & HR</p>
+            <h2 className="mt-2 text-3xl font-black tracking-tighter sm:text-4xl">Business-Trip für dein Team</h2>
+            <p className="mt-3 max-w-xl text-white/70">
+              Diesen Kurs gibt es exklusiv für eure Mitarbeitenden – mit eigenem Termin, Rechnung auf das Unternehmen
+              und optionalem Catering.
+            </p>
+            <div className="mt-6 grid gap-6 sm:grid-cols-[1fr_auto] sm:items-end">
+              <ul className="space-y-2 text-sm text-white/80">
+                {businessOffer.highlights.map((highlight) => (
+                  <li key={highlight} className="flex gap-2">
+                    <span aria-hidden>✓</span>
+                    {highlight}
+                  </li>
+                ))}
+              </ul>
+              <div className="sm:text-right">
+                <p className="text-sm text-white/60">
+                  {businessOffer.minGroup}–{businessOffer.maxGroup} Personen · ab
+                </p>
+                <p className="text-4xl font-black tracking-tighter">
+                  {formatPrice(businessOffer.pricePerPerson)}
+                  <span className="text-base font-semibold text-white/60"> p. P.</span>
+                </p>
+              </div>
+            </div>
+            <div className="mt-8">
+              <Button href={`/kurse/${course.slug}/business`} variant="secondary">
+                Als Business-Trip anfragen →
+              </Button>
+            </div>
+          </section>
+        )}
       </div>
     </div>
   );

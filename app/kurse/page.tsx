@@ -2,7 +2,7 @@
 
 import { Suspense, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { courses, categories, brandPartners } from "@/lib/mock-data";
+import { courses, categories, brandPartners, getBusinessOffer } from "@/lib/mock-data";
 import { CourseCard } from "@/components/course/CourseCard";
 import { CourseFilterBar } from "@/components/course/CourseFilterBar";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -12,14 +12,16 @@ function KursePageContent() {
   const initialCategory = searchParams.get("kategorie");
   const [activeCategory, setActiveCategory] = useState<string | null>(initialCategory);
   const [onlyBrandCooperations, setOnlyBrandCooperations] = useState(false);
+  const [onlyBusiness, setOnlyBusiness] = useState(searchParams.get("business") === "1");
 
   const filteredCourses = useMemo(() => {
     return courses.filter((course) => {
       if (activeCategory && course.category !== activeCategory) return false;
       if (onlyBrandCooperations && !course.brandPartnerId) return false;
+      if (onlyBusiness && !getBusinessOffer(course.slug)) return false;
       return true;
     });
-  }, [activeCategory, onlyBrandCooperations]);
+  }, [activeCategory, onlyBrandCooperations, onlyBusiness]);
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
@@ -32,6 +34,8 @@ function KursePageContent() {
           onlyBrandCooperations={onlyBrandCooperations}
           onCategoryChange={setActiveCategory}
           onBrandToggle={setOnlyBrandCooperations}
+          onlyBusiness={onlyBusiness}
+          onBusinessToggle={setOnlyBusiness}
         />
       </div>
 

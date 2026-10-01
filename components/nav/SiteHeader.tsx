@@ -9,6 +9,7 @@ const customerLinks = [
   { href: "/", label: "Start" },
   { href: "/kurse", label: "Kurse" },
   { href: "/standort", label: "Standort" },
+  { href: "/business", label: "Für Firmen" },
   { href: "/#so-laeufts", label: "So läuft's" },
   { href: "/#faq", label: "Fragen" },
 ];

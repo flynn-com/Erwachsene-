@@ -8,6 +8,8 @@ type CourseFilterBarProps = {
   onlyBrandCooperations: boolean;
   onCategoryChange: (category: string | null) => void;
   onBrandToggle: (value: boolean) => void;
+  onlyBusiness: boolean;
+  onBusinessToggle: (value: boolean) => void;
 };
 
 export function CourseFilterBar({
@@ -16,6 +18,8 @@ export function CourseFilterBar({
   onlyBrandCooperations,
   onCategoryChange,
   onBrandToggle,
+  onlyBusiness,
+  onBusinessToggle,
 }: CourseFilterBarProps) {
   return (
     <div className="flex flex-col gap-4">
@@ -45,15 +49,26 @@ export function CourseFilterBar({
         ))}
       </div>
 
-      <label className="flex w-fit items-center gap-2 text-sm font-medium text-[var(--crafty-ink)]">
-        <input
-          type="checkbox"
-          checked={onlyBrandCooperations}
-          onChange={(e) => onBrandToggle(e.target.checked)}
-          className="h-4 w-4 rounded border-[var(--crafty-border)] accent-[var(--crafty-accent-dark)]"
-        />
-        Nur Markenkooperationen anzeigen
-      </label>
+      <div className="flex flex-wrap gap-x-6 gap-y-2">
+        <label className="flex w-fit items-center gap-2 text-sm font-medium text-[var(--crafty-ink)]">
+          <input
+            type="checkbox"
+            checked={onlyBrandCooperations}
+            onChange={(e) => onBrandToggle(e.target.checked)}
+            className="h-4 w-4 rounded border-[var(--crafty-border)] accent-[var(--crafty-accent-dark)]"
+          />
+          Nur Markenkooperationen anzeigen
+        </label>
+        <label className="flex w-fit items-center gap-2 text-sm font-medium text-[var(--crafty-ink)]">
+          <input
+            type="checkbox"
+            checked={onlyBusiness}
+            onChange={(e) => onBusinessToggle(e.target.checked)}
+            className="h-4 w-4 rounded border-[var(--crafty-border)] accent-[var(--crafty-accent-dark)]"
+          />
+          Nur für Teams buchbar (Business-Trip)
+        </label>
+      </div>
     </div>
   );
 }

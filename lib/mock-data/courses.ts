@@ -9,7 +9,7 @@ export const courses: Course[] = [
     description:
       "In diesem Kurs lernst du die Grundtechniken des Zeichnens kennen: von der Strichführung über Schraffuren bis zur einfachen Perspektive. Alle Materialien von Faber-Castell werden gestellt.",
     durationMinutes: 120,
-    price: 39,
+    price: 59,
     room: "Atelier 1",
     brandPartnerId: "faber-castell",
     imageSrc: "/course-images/faber-castell-zeichnen.jpg",
@@ -24,7 +24,7 @@ export const courses: Course[] = [
     description:
       "Wir ziehen los und skizzieren München: Architektur, Menschen, Straßenszenen. Ein Kurs für alle, die schnell und intuitiv zeichnen lernen wollen.",
     durationMinutes: 90,
-    price: 35,
+    price: 49,
     room: "Treffpunkt Halle / Außenbereich",
     imageSrc: "/course-images/skizze-hand.jpg",
     level: "Alle Level",
@@ -38,7 +38,7 @@ export const courses: Course[] = [
     description:
       "Ein Designer aus dem Mercedes-Benz Designstudio zeigt dir, wie aus der ersten Linie ein Auto wird: Proportionen, Perspektive, Licht und Schatten. Mit Marker und Bleistift skizzierst du dein eigenes Concept Car – von der Seitenansicht bis zur dynamischen Dreiviertelansicht. Zum Abschluss besprechen wir die Entwürfe gemeinsam, die besten werden in der Halle ausgestellt. Inklusive Getränke und Snacks.",
     durationMinutes: 180,
-    price: 89,
+    price: 119,
     room: "Atelier 1 & 2",
     brandPartnerId: "mercedes-benz",
     imageSrc: "/course-images/mercedes-design.jpg",
@@ -53,7 +53,7 @@ export const courses: Course[] = [
     description:
       "Ein Einstieg in die Aquarellmalerei: Farbmischung, nass-in-nass Technik und erste kleine Kompositionen. Material von Faber-Castell inklusive.",
     durationMinutes: 150,
-    price: 45,
+    price: 59,
     room: "Atelier 2",
     brandPartnerId: "faber-castell",
     imageSrc: "/course-images/aquarell-farben.jpg",
@@ -68,7 +68,7 @@ export const courses: Course[] = [
     description:
       "In Kooperation mit RIMOWA gestaltest du einen echten Aluminium-Koffer nach deinen eigenen Vorstellungen – von abstrakten Mustern bis zum persönlichen Motiv. Der Koffer geht mit dir nach Hause.",
     durationMinutes: 120,
-    price: 89,
+    price: 119,
     room: "Atelier 1",
     brandPartnerId: "rimowa",
     imageSrc: "/course-images/rimowa-koffer.jpg",
@@ -83,7 +83,7 @@ export const courses: Course[] = [
     description:
       "Du lernst den Umgang mit der Töpferscheibe und formst deine ersten eigenen Gefäße. Für Einsteiger geeignet, Brennen und Abholung im Anschluss möglich.",
     durationMinutes: 180,
-    price: 55,
+    price: 79,
     room: "Werkraum Keramik",
     imageSrc: "/course-images/bildhauer-atelier.jpg",
     level: "Einsteiger",
@@ -97,7 +97,7 @@ export const courses: Course[] = [
     description:
       "Handaufbau-Techniken wie Wulst- und Plattentechnik eignen sich hervorragend für den Einstieg in die Keramik – ganz ohne Scheibe.",
     durationMinutes: 150,
-    price: 49,
+    price: 69,
     room: "Werkraum Keramik",
     imageSrc: "/course-images/keramik-handaufbau.jpg",
     level: "Einsteiger",
@@ -111,7 +111,7 @@ export const courses: Course[] = [
     description:
       "Gemeinsam mit lululemon gestaltest du individuelle Stickereien auf hochwertigen Sportbekleidungsstücken – von Monogrammen bis zu kleinen Icons.",
     durationMinutes: 120,
-    price: 42,
+    price: 59,
     room: "Atelier 3",
     brandPartnerId: "lululemon",
     imageSrc: "/course-images/lululemon-sticken.jpg",
@@ -126,7 +126,7 @@ export const courses: Course[] = [
     description:
       "Ein fließender Vinyasa-Flow für Körper und Geist, begleitet von lululemon mit Equipment und Kleidung zum Testen vor Ort.",
     durationMinutes: 75,
-    price: 25,
+    price: 39,
     room: "Bewegungsraum",
     brandPartnerId: "lululemon",
     imageSrc: "/course-images/yoga-panorama.jpg",
@@ -141,7 +141,7 @@ export const courses: Course[] = [
     description:
       "Mit professionellem Hilti-Werkzeug lernst du die Grundlagen der Steinbearbeitung: Materialkunde, Sicherheit und erste einfache Formen.",
     durationMinutes: 180,
-    price: 69,
+    price: 99,
     room: "Werkhalle",
     brandPartnerId: "hilti",
     imageSrc: "/course-images/steinhauen-atelier.jpg",
@@ -156,7 +156,7 @@ export const courses: Course[] = [
     description:
       "In Schutzausrüstung geht's rein: Geschirr, alte Elektronik und mehr werden mit Schlägern und Stangen zertrümmert. Ein Kurs zum Stressabbau.",
     durationMinutes: 45,
-    price: 35,
+    price: 49,
     room: "Rage Room",
     imageSrc: "/course-images/rage-room.jpg",
     level: "Alle Level",
@@ -170,7 +170,7 @@ export const courses: Course[] = [
     description:
       "Gemeinsam mit einem ausgezeichneten Küchenchef kochst du ein mehrgängiges Menü und lernst Techniken der gehobenen Küche für zu Hause.",
     durationMinutes: 210,
-    price: 99,
+    price: 129,
     room: "Showküche",
     brandPartnerId: "sternekoch",
     imageSrc: "/course-images/kochen-showkueche.jpg",
@@ -185,7 +185,7 @@ export const courses: Course[] = [
     description:
       "In Kooperation mit dm mischst du deine eigene Naturkosmetik – von der Gesichtscreme bis zum Lippenbalsam. Alle Rohstoffe und Rezepturen werden gestellt, du nimmst deine Kreationen mit nach Hause.",
     durationMinutes: 90,
-    price: 39,
+    price: 59,
     room: "Atelier 2",
     brandPartnerId: "dm",
     imageSrc: "/course-images/dm-workshop.jpg",
@@ -200,7 +200,7 @@ export const courses: Course[] = [
     description:
       "Gemeinsam mit rhode entwickelst du eine reduzierte Skincare-Routine für deinen Hauttyp und gestaltest dein eigenes Lip-Case-Design – inspiriert von der minimalistischen rhode-Ästhetik.",
     durationMinutes: 90,
-    price: 59,
+    price: 79,
     room: "Atelier 2",
     brandPartnerId: "rhode",
     imageSrc: "/course-images/rhode-produkte.jpg",
@@ -215,7 +215,7 @@ export const courses: Course[] = [
     description:
       "Mit Profi-Pinseln und Produkten von Haus Labs lernst du, Foundation passend zu deinem Hautton aufzutragen, Gesichtskonturen zu betonen und einen Look zu kreieren, der zu dir passt. Ein Make-up-Artist zeigt dir die wichtigsten Techniken Schritt für Schritt.",
     durationMinutes: 120,
-    price: 69,
+    price: 99,
     room: "Atelier 2",
     brandPartnerId: "haus-labs",
     imageSrc: "/course-images/haus-labs-makeup.jpg",
@@ -230,7 +230,7 @@ export const courses: Course[] = [
     description:
       "Am großen Werktisch arrangierst du Rosen, Wicken und Wildblumen der Saison in Messing- und Glasgefäßen. Du lernst, Farben und Formen zu kombinieren, Blumen richtig anzuschneiden und eine stimmige Tischdeko für zu Hause zu gestalten.",
     durationMinutes: 150,
-    price: 65,
+    price: 89,
     room: "Blumenwerkstatt",
     imageSrc: "/course-images/floristik-werkstatt.jpg",
     level: "Alle Level",
@@ -244,7 +244,7 @@ export const courses: Course[] = [
     description:
       "Schritt für Schritt bindest du einen Strauß in Spiraltechnik: Blumen auswählen, Stiele vorbereiten, binden und schön verpacken. Den fertigen Strauß nimmst du mit nach Hause.",
     durationMinutes: 120,
-    price: 49,
+    price: 69,
     room: "Blumenwerkstatt",
     imageSrc: "/course-images/floristik-strauss.jpg",
     level: "Einsteiger",
@@ -258,7 +258,7 @@ export const courses: Course[] = [
     description:
       "Gemeinsam mit einem Sommelier probierst du junge Rotweine direkt aus dem Holzfass und vergleichst sie mit fertig ausgebauten Jahrgängen. Du lernst, Wein richtig zu verkosten, Aromen zu erkennen und zu beschreiben – dazu gibt es Brot und Käse. Teilnahme ab 18 Jahren.",
     durationMinutes: 120,
-    price: 55,
+    price: 79,
     room: "Showküche",
     imageSrc: "/course-images/weintasting.jpg",
     level: "Alle Level",

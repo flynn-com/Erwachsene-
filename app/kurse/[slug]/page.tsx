@@ -72,10 +72,10 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ s
               </ul>
               <div className="sm:text-right">
                 <p className="text-sm text-white/60">
-                  {businessOffer.minGroup}–{businessOffer.maxGroup} Personen · ab
+                  {businessOffer.minGroup}–{businessOffer.maxGroup} Personen · gleicher Preis wie im Kurs
                 </p>
                 <p className="text-4xl font-black tracking-tighter">
-                  {formatPrice(businessOffer.pricePerPerson)}
+                  {formatPrice(course.price)}
                   <span className="text-base font-semibold text-white/60"> p. P.</span>
                 </p>
               </div>

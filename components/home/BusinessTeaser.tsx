@@ -61,7 +61,7 @@ export function BusinessTeaser({ items }: { items: { course: Course; offer: Busi
               {course.title}
             </h3>
             <p className="mt-1 text-sm font-semibold text-white/75">
-              ab {formatPrice(offer.pricePerPerson)} p. P. · Anfragen →
+              {formatPrice(course.price)} p. P. · Anfragen →
             </p>
           </Link>
         ))}

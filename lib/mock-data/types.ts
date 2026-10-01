@@ -46,7 +46,6 @@ export interface BusinessOffer {
   courseSlug: string;
   minGroup: number;
   maxGroup: number;
-  pricePerPerson: number;
   highlights: string[];
 }
 

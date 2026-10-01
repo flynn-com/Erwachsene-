@@ -6,10 +6,10 @@ import { Button } from "@/components/ui/Button";
 import { formatPrice } from "@/lib/format";
 
 const extras = [
-  { id: "catering", label: "Catering (Fingerfood & Snacks)", pricePerPerson: 18 },
-  { id: "getraenke", label: "Getränkepaket", pricePerPerson: 12 },
-  { id: "exklusiv", label: "Exklusive Raumnutzung", flatPrice: 250 },
-  { id: "fotograf", label: "Fotograf:in für Teamfotos", flatPrice: 290 },
+  { id: "catering", label: "Catering (Fingerfood & Snacks)", pricePerPerson: 24 },
+  { id: "getraenke", label: "Getränkepaket", pricePerPerson: 16 },
+  { id: "exklusiv", label: "Exklusive Raumnutzung", flatPrice: 329 },
+  { id: "fotograf", label: "Fotograf:in für Teamfotos", flatPrice: 379 },
 ] as const;
 
 const timeOptions = ["Vormittag", "Nachmittag", "Abend"];
@@ -33,8 +33,8 @@ const inputClass =
   "rounded-xl border border-[var(--crafty-border)] bg-white px-4 py-3 text-sm text-[var(--crafty-ink)] outline-none transition-colors focus:border-[var(--crafty-ink)]";
 const labelClass = "flex flex-col gap-1.5 text-sm font-semibold text-[var(--crafty-ink)]";
 
-function estimateTotal(offer: BusinessOffer, groupSize: number, selectedExtras: string[]): number {
-  let total = offer.pricePerPerson * groupSize;
+function estimateTotal(pricePerPerson: number, groupSize: number, selectedExtras: string[]): number {
+  let total = pricePerPerson * groupSize;
   for (const extra of extras) {
     if (!selectedExtras.includes(extra.id)) continue;
     total += "pricePerPerson" in extra ? extra.pricePerPerson * groupSize : extra.flatPrice;
@@ -72,7 +72,7 @@ export function BusinessRequestForm({ course, offer }: { course: Course; offer: 
     groupSizeValid &&
     form.preferredDate !== "";
 
-  const total = estimateTotal(offer, groupSizeValid ? form.groupSize : offer.minGroup, form.extras);
+  const total = estimateTotal(course.price, groupSizeValid ? form.groupSize : offer.minGroup, form.extras);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -303,15 +303,15 @@ export function BusinessRequestForm({ course, offer }: { course: Course; offer: 
           <div className="mt-6 border-t border-white/15 pt-5 text-sm">
             <div className="flex justify-between text-white/70">
               <span>
-                {groupSizeValid ? form.groupSize : offer.minGroup} × {formatPrice(offer.pricePerPerson)}
+                {groupSizeValid ? form.groupSize : offer.minGroup} × {formatPrice(course.price)}
               </span>
-              <span>{formatPrice((groupSizeValid ? form.groupSize : offer.minGroup) * offer.pricePerPerson)}</span>
+              <span>{formatPrice((groupSizeValid ? form.groupSize : offer.minGroup) * course.price)}</span>
             </div>
             {form.extras.length > 0 && (
               <div className="mt-1 flex justify-between text-white/70">
                 <span>Extras</span>
                 <span>
-                  {formatPrice(total - (groupSizeValid ? form.groupSize : offer.minGroup) * offer.pricePerPerson)}
+                  {formatPrice(total - (groupSizeValid ? form.groupSize : offer.minGroup) * course.price)}
                 </span>
               </div>
             )}

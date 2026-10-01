@@ -113,7 +113,7 @@ export default function HomePage() {
 
       <section id="markenkurse" className="mx-auto max-w-6xl scroll-mt-20 px-4 pb-8 pt-16 sm:px-6 sm:pt-20">
         <SectionHeading
-          eyebrow="Kurse mit Marke"
+          eyebrow="Kurse mit Brands"
           title="Kreativ mit Brands, die du liebst"
           description="Echte Markenkooperationen: Material, Produkte und Profis direkt von den Marken."
         />

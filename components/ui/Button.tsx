@@ -13,7 +13,7 @@ type ButtonProps = {
 
 const variantClasses: Record<string, string> = {
   primary: "bg-[var(--crafty-petrol)] text-white hover:bg-[var(--crafty-petrol-dark)]",
-  secondary: "bg-white text-[var(--crafty-petrol)] hover:bg-[var(--crafty-accent-tint)]",
+  secondary: "bg-[var(--crafty-accent)] text-white hover:bg-[var(--crafty-accent-hover)]",
   ghost: "bg-transparent text-[var(--crafty-petrol)] border border-[var(--crafty-petrol)] hover:bg-[var(--crafty-petrol)] hover:text-white",
   "ghost-invert": "bg-transparent text-white border border-white/70 hover:bg-white hover:text-[var(--crafty-ink)]",
 };

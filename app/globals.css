@@ -8,14 +8,14 @@
   --crafty-surface: #ffffff;
   --crafty-ink: #2b2a28;
   --crafty-muted: #8a8377;
-  /* Accent — petrol */
-  --crafty-accent: #003544;
-  --crafty-accent-dark: #003544;
-  --crafty-accent-hover: #00252f;
-  /* Light petrol for small text on dark surfaces */
-  --crafty-accent-light: #8cc4d1;
-  /* Pale petrol tint for hover states on light buttons */
-  --crafty-accent-tint: #e3eef1;
+  /* Accent — forest green */
+  --crafty-accent: #2c6041;
+  --crafty-accent-dark: #2c6041;
+  --crafty-accent-hover: #224b33;
+  /* Light green for small text on dark surfaces */
+  --crafty-accent-light: #9fd1b0;
+  /* Pale green tint for hover states on light buttons */
+  --crafty-accent-tint: #e4efe8;
 
   /* Petrol — secondary brand color for dark surfaces, primary buttons and selected states */
   --crafty-petrol: #003544;

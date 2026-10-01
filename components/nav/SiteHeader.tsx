@@ -67,25 +67,6 @@ export function SiteHeader() {
               )}
             </>
           )}
-
-          <div className="flex items-center gap-2 rounded-full border border-[var(--crafty-border)] bg-[var(--crafty-surface)] p-1 text-xs font-semibold">
-            <Link
-              href="/"
-              className={`rounded-full px-3 py-1.5 transition-colors ${
-                !isPartner ? "bg-[var(--crafty-petrol)] text-white" : "text-[var(--crafty-muted)]"
-              }`}
-            >
-              Kunde
-            </Link>
-            <Link
-              href="/partner"
-              className={`rounded-full px-3 py-1.5 transition-colors ${
-                isPartner ? "bg-[var(--crafty-petrol)] text-white" : "text-[var(--crafty-muted)]"
-              }`}
-            >
-              Partner
-            </Link>
-          </div>
         </div>
       </div>
     </header>

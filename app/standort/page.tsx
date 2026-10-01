@@ -42,11 +42,22 @@ export default function StandortPage() {
         ))}
       </div>
 
-      <div className="mt-10 rounded-[28px] border border-black/5 bg-white shadow-sm p-6">
-        <h3 className="font-bold text-[var(--crafty-ink)]">Adresse (Platzhalter)</h3>
-        <p className="mt-2 text-sm text-[var(--crafty-muted)]">
-          Kreativstraße 12, 80331 München — geöffnet täglich von 9:00 bis 22:00 Uhr.
-        </p>
+      <div className="mt-10 grid overflow-hidden rounded-[28px] border border-black/5 bg-white shadow-sm sm:grid-cols-[2fr_3fr]">
+        <div className="relative aspect-[4/3] sm:aspect-auto sm:min-h-72">
+          <Image
+            src="/standort-fassade.jpg"
+            alt="Eingang des Atelierhaus München unter den Backsteinbögen"
+            fill
+            sizes="(min-width: 640px) 390px, 100vw"
+            className="object-cover"
+          />
+        </div>
+        <div className="flex flex-col justify-center p-6 sm:p-8">
+          <h3 className="font-bold text-[var(--crafty-ink)]">Adresse (Platzhalter)</h3>
+          <p className="mt-2 text-sm text-[var(--crafty-muted)]">
+            Kreativstraße 12, 80331 München — geöffnet täglich von 9:00 bis 22:00 Uhr.
+          </p>
+        </div>
       </div>
 
       <div className="mt-10">
